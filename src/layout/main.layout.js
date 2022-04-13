@@ -2,7 +2,6 @@ import React from 'react';
 import anime from 'animejs';
 import Background from "../components/background";
 import Logo from "../components/svg/logo.svg";
-import Info from '../components/info.comp';
 
 class Layout extends React.Component {
 
