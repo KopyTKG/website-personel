@@ -1,9 +1,12 @@
-import App from "../temp/App";
+import Layout from "../layout/main.layout";
+import Parallax from "../middleware/parallax.controler";
 
 export default () => {
     return(
         <> 
-        <App/>
+        <Parallax >
+            <Layout />
+        </Parallax>
         </>
     );
 }

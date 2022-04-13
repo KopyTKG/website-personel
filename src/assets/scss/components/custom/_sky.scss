@@ -1,0 +1,41 @@
+.sky {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background: linear-gradient(to right, rgb(0,0,0) 0%, rgb(4, 0, 44) 100%);
+    width: 100vw;
+    height: 450vh;
+}
+
+#sky {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#star {
+    margin: 0;
+    padding: 0;
+    width: 150vh;
+    height: 100vw;
+    position: fixed;
+    overflow: hidden;
+    transform: translateX(calc(50vw - 50%)) translateY(calc(50vh - 50%)) rotate(120deg);
+}
+
+.wish {
+    height: 2px;
+    top: 300px;
+    width: 100px;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    background-color: white;
+    position: absolute;
+    background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
+    filter: drop-shadow(0 0 6px white);
+    overflow: hidden;
+  }
