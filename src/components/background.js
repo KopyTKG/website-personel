@@ -59,7 +59,7 @@ class Background extends React.Component {
     };
     componentDidMount() {
       this.starryNight();
-      this.shootingStars();
+      //this.shootingStars();
     }
     render() {
       const { num } = this.state;
