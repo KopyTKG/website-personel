@@ -42,8 +42,9 @@
     }
     & .main {
         width: 100vw;
-        height: 300vh;
+        height: max-content;
         z-index: 5;
+        padding-bottom: 20vh;
 
         & .logo {
             color: white;
@@ -63,12 +64,6 @@
             font-size: 24px;
         }
         background-color: black;
-        & svg {
-            height: 50vh;
-            & path {
-                stroke: white;
-            }
-        }
         
 
 

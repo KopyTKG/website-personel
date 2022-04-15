@@ -6,6 +6,13 @@
     width: 100vw;
     height: 150vh;
 }
+.day {
+    position: absolute;
+    width: 100vw;
+    height: 150vh;
+    z-index: -1;
+    background: linear-gradient(rgb(5, 0, 65) 0% , rgb(28, 62, 94) 100%) ;
+}
 
 #sky {
     width: 100vw;
