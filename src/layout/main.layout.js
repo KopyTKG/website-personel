@@ -2,6 +2,7 @@ import React from 'react';
 import anime from 'animejs';
 import Background from "../components/background";
 import Logo from "../components/svg/logo.svg";
+import Parallax from '../middleware/parallax';
 
 class Layout extends React.Component {
 
@@ -21,11 +22,14 @@ class Layout extends React.Component {
         return(
             <>
                 <div className="section">
-                    <div className="center">
-                        <div className="title">
-                            <Logo />
+                    <Parallax direction="vertical" speed="0.3">
+                        <div className="center">
+                            <div className="title">
+                                <Logo />
+                            </div>
                         </div>
-                    </div>
+                    </Parallax>
+                    <div className='moon'/>
                 </div> 
                 <div className="section">
                     <div className="parallax" 

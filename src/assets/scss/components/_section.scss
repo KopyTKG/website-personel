@@ -37,11 +37,14 @@
     & .splitter {
         padding: 0;
         margin-bottom: -1vh;
+        z-index: 5;
         fill: black;
     }
     & .main {
         width: 100vw;
         height: 300vh;
+        z-index: 5;
+
         & .logo {
             color: white;
             font-size: 50px;

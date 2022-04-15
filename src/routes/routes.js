@@ -1,12 +1,12 @@
 import Layout from "../layout/main.layout";
-import Parallax from "../middleware/parallax.controler";
+import ParallaxController from "../middleware/parallax.controler";
 
 export default () => {
     return(
         <> 
-        <Parallax >
+        <ParallaxController >
             <Layout />
-        </Parallax>
+        </ParallaxController>
         </>
     );
 }

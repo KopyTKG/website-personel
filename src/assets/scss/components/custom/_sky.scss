@@ -2,9 +2,9 @@
     position: absolute;
     top: 0;
     z-index: -1;
-    background: linear-gradient(to right, rgb(0,0,0) 0%, rgb(4, 0, 44) 100%);
+    background: linear-gradient(rgb(0,0,0) 0%, rgb(4, 0, 44) 100%);
     width: 100vw;
-    height: 450vh;
+    height: 150vh;
 }
 
 #sky {
@@ -39,3 +39,14 @@
     filter: drop-shadow(0 0 6px white);
     overflow: hidden;
   }
+
+  .moon{
+    position: absolute;
+    top: 100vh;
+    left: 60vw;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 5px 2px 0px 0px #fff; 
+}
