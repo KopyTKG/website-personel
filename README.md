@@ -1,5 +1,9 @@
 ## Updates
 
+* V 0.0.5
+
+background rework into scss vars. Rednder rework for phones.
+
 * V 0.0.4
 
 added a main slots and svgs for all platforms. Bootstrap added for responsive styling.

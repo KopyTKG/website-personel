@@ -38,13 +38,21 @@
         padding: 0;
         margin-bottom: -1vh;
         z-index: 5;
-        fill: black;
+        //fill: black;
+        & .top {
+            fill: $MainTop;
+        }
+        
+        & .bottom {
+            fill:$MainBottom;
+        }
     }
     & .main {
         width: 100vw;
         height: max-content;
         z-index: 5;
         padding-bottom: 20vh;
+        background: linear-gradient( $MainTop 0%, $MainBottom 100%);
 
         & .logo {
             color: white;
@@ -62,11 +70,7 @@
             margin-top: 20vh;
             color: white;
             font-size: 24px;
-        }
-        background-color: black;
-        
-
-
+        }        
         & .scroller {
             margin-top: 10vh;
             height: 150vh;

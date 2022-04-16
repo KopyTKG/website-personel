@@ -2,16 +2,9 @@
     position: absolute;
     top: 0;
     z-index: -1;
-    background: linear-gradient(rgb(0,0,0) 0%, rgb(4, 0, 44) 100%);
-    width: 100vw;
-    height: 150vh;
-}
-.day {
-    position: absolute;
-    width: 100vw;
-    height: 150vh;
-    z-index: -1;
-    background: linear-gradient(rgb(5, 0, 65) 0% , rgb(28, 62, 94) 100%) ;
+    background: linear-gradient($DarkTop 0%, $DarkBottom 25%, $LightTop 50%, $LightBottom 100%);
+    width: $DocumentWidth;
+    height: $DocumentHeight;
 }
 
 #sky {
@@ -33,19 +26,7 @@
     transform: translateX(calc(50vw - 50%)) translateY(calc(50vh - 50%)) rotate(120deg);
 }
 
-.wish {
-    height: 2px;
-    top: 300px;
-    width: 100px;
-    margin: 0;
-    opacity: 0;
-    padding: 0;
-    background-color: white;
-    position: absolute;
-    background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
-    filter: drop-shadow(0 0 6px white);
-    overflow: hidden;
-  }
+
 
   .moon{
     position: absolute;

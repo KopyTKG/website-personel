@@ -1,8 +1,11 @@
+@import "./components/custom/variables";
+
+// custom scss
+@import "./components/custom/sky";
+
+// components
 @import "./components/default";
 @import "./components/section";
 @import "./components/slot";
 @import "./components/scrollbar";
 
-
-// custom scss
-@import "./components/custom/sky";
