@@ -26,9 +26,15 @@
     transform: translateX(calc(50vw - 50%)) translateY(calc(50vh - 50%)) rotate(120deg);
 }
 
+.balloon {
+    position: absolute;
+    top: 325vh;
+    left: 75vw;
+    fill: white;
+    height: 5em;
+}
 
-
-  .moon{
+.moon{
     position: absolute;
     top: 100vh;
     left: 60vw;

@@ -1,5 +1,9 @@
 ## Updates
 
+* V 0.0.6
+
+title has been changed + icon. Background added a balloon. Changed logo on the site.
+
 * V 0.0.5
 
 background rework into scss vars. Rednder rework for phones.

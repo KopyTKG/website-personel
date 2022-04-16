@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Background from "../components/background";
 import Logo from "../components/svg/logo.svg";
+import Balloon from "../components/svg/balloon.svg";
 import Parallax from '../middleware/parallax';
 import { Col, Container, Row } from 'reactstrap';
 
@@ -67,7 +68,7 @@ const Layout = (props) => {
                                     </Col>
                                     <Col lg="6" className='slot-margin'>
                                         <center>
-                                            <img src={process.env.PUBLIC_URL + '/img/logo.jpeg'} /> 
+                                            <img src={process.env.PUBLIC_URL + '/img/logo.png'} /> 
                                         </center>
                                     </Col>
                                 </Row>
@@ -181,6 +182,7 @@ const Layout = (props) => {
                     </siv>
                 </div>
             </div>
+            <Balloon class="balloon" />
             <Background  density={density}/>
         </>
     );
