@@ -1,0 +1,17 @@
+.rounded {
+    border-radius: 50%;
+}
+
+.description {
+    font-size: 16px;
+    text-align: justify;
+    & .title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+
+.redirect {
+    color: rgb(170, 170, 170);
+    font-size: 14px;
+}

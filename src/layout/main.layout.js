@@ -5,19 +5,15 @@ import Balloon from "../components/svg/balloon.svg";
 import Parallax from '../middleware/parallax';
 import { Col, Container, Row } from 'reactstrap';
 
-import {Discord, Instagram, Twitter, Twitch, Facebook} from "../assets/@svg/react/solid/";
-
 const Layout = (props) => {
     const [limit, setLimit] = useState(false);
     const [density, setDensity] = useState(950);
-    const [srender, setSrender] = useState(false);
 
     const Mount = () => {
         let vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         if(vw < 1000) 
         {   
             setDensity(100);
-            setSrender(true);
         }
         setLimit(true);
     }
@@ -25,7 +21,7 @@ const Layout = (props) => {
         <>
         {!limit? Mount(): null}
             <div className="section">
-                <Parallax direction="vertical" speed="0.3">
+                <Parallax direction="vertical" speed="0.45">
                     <div className="center">
                         <div className="title">
                             <Logo />
@@ -47,132 +43,45 @@ const Layout = (props) => {
                         </div>
                     </div>
                     <div className="main">
-                        <div className='parallax' data-direction="vertical" data-rate="0.1">
-                            <center>
-                                <div className='logo'> {"<KopyTKG/>"} </div>
-                                
-                            </center>
-                        </div> 
                         <div className='info'>
                             <Container>
                                 <Row>
-                                    <Col lg="6" className='slot-margin'>
-                                        <div className='slot'>
-                                            <div className='title'>
-                                                    Kdo jsem?
-                                            </div>
-                                            <div className='description'>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate, turpis sit amet suscipit ullamcorper, libero leo fermentum erat, interdum viverra nisl dui non nulla. Proin elementum nulla lacus, in suscipit massa fringilla quis. Integer at lorem dictum, luctus nibh quis, pretium tortor. In vestibulum aliquam vestibulum. Nam auctor risus gravida sapien gravida aliquam. Aliquam feugiat eu ligula vitae rhoncus. Praesent in blandit turpis.
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col lg="6" className='slot-margin'>
+                                    <Col lg="2"/>
+                                    <Col xs="12" lg="4" className='slot-margin'>
                                         <center>
-                                            <img src={process.env.PUBLIC_URL + '/img/logo.png'} /> 
+                                            <img className="ico-logo" src={process.env.PUBLIC_URL + '/img/logo.png'} /> 
+                                        </center>
+                                    </Col>
+                                    <Col xs="12" lg="4" className="description">
+                                        <span className="title"> Kdo jsem? </span><br/>
+                                        {props.settings["description"]}
+                                    </Col>
+                                </Row>
+                                <br />
+                                <Row>
+                                    <Col className="redirect">
+                                        <center> 
+                                            kde mě najdeš? 
+                                            &nbsp;
+                                            - 
+                                            &nbsp;
+                                            <a href="https://signpost.definitelynotawebsite.website" className="btn-secondary btn"> 
+                                                signpost 
+                                            </a>
                                         </center>
                                     </Col>
                                 </Row>
-                                <Row>
-                                    {density < 500? 
-                                            <>
-                                            <Col lg="6" className='slot-margin'>
-                                                    <div className='slot'>
-                                                        <div className='title'>
-                                                            Kde mě najdeš?
-                                                        </div>
-                                                        <div className='description'>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate, turpis sit amet suscipit ullamcorper, libero leo fermentum erat, interdum viverra nisl dui non nulla. Proin elementum nulla lacus, in suscipit massa fringilla quis. Integer at lorem dictum, luctus nibh quis, pretium tortor. In vestibulum aliquam vestibulum. Nam auctor risus gravida sapien gravida aliquam. Aliquam feugiat eu ligula vitae rhoncus. Praesent in blandit turpis.
-                                                        </div>
-                                                    </div>
-                                                </Col>
-                                            <Col lg="6" className='slot-margin'>
-                                                    <Row>
-                                                        <Col lg="4" xs="4">
-                                                            <a href="#">
-                                                                <Discord className='svg'/>
-                                                            </a>
-                                                        </Col>
-                                                        <Col lg="4" xs="4">
-                                                            <a href="https://instagram.com/kopy_tkg" target="_blank">
-                                                                <Instagram className='svg'/>
-                                                            </a>
-                                                        </Col>
-                                                        <Col lg="4" xs="4">
-                                                            <a href="https://twitter.com/kopy_tkg" target="_blank">
-                                                                <Twitter className='svg'/>
-                                                            </a>
-                                                        </Col>
-                                                    </Row>
-                                                    <Row>
-                                                        <Col xs="2" />
-                                                        <Col xs="4">
-                                                            <a href="https://www.twitch.tv/kopytkg" target="_blank">
-                                                                <Twitch className='svg'/>
-                                                            </a>
-                                                        </Col>
-                                                        <Col xs="4">
-                                                            <a href='https://www.facebook.com/Kopyy' target="_blank">
-                                                                <Facebook className='svg' />
-                                                            </a>
-                                                        </Col>
-                                                        <Col xs="2" />
-                                                    </Row>
-                                                </Col> 
-                                                </>
-                                                :
-                                                <>
-                                                <Col lg="6" className='slot-margin'>
-                                                    <Row>
-                                                        <Col lg="4" xs="4">
-                                                            <a href="#">
-                                                                <Discord className='svg'/>
-                                                            </a>
-                                                        </Col>
-                                                        <Col lg="4" xs="4">
-                                                            <a href="https://instagram.com/kopy_tkg" target="_blank">
-                                                                <Instagram className='svg'/>
-                                                            </a>
-                                                        </Col>
-                                                        <Col lg="4" xs="4">
-                                                            <a href="https://twitter.com/kopy_tkg" target="_blank">
-                                                                <Twitter className='svg'/>
-                                                            </a>
-                                                        </Col>
-                                                    </Row>
-                                                    <Row>
-                                                        <Col xs="2" />
-                                                        <Col xs="4">
-                                                            <a href="https://www.twitch.tv/kopytkg" target="_blank">
-                                                                <Twitch className='svg'/>
-                                                            </a>
-                                                        </Col>
-                                                        <Col xs="4">
-                                                            <a href='https://www.facebook.com/Kopyy' target="_blank">
-                                                                <Facebook className='svg' />
-                                                            </a>
-                                                        </Col>
-                                                        <Col xs="2" />
-                                                    </Row>
-                                                </Col>
-                                                <Col lg="6" className='slot-margin'>
-                                                    <div className='slot'>
-                                                        <div className='title'>
-                                                            Kde mě najdeš?
-                                                        </div>
-                                                        <div className='description'>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate, turpis sit amet suscipit ullamcorper, libero leo fermentum erat, interdum viverra nisl dui non nulla. Proin elementum nulla lacus, in suscipit massa fringilla quis. Integer at lorem dictum, luctus nibh quis, pretium tortor. In vestibulum aliquam vestibulum. Nam auctor risus gravida sapien gravida aliquam. Aliquam feugiat eu ligula vitae rhoncus. Praesent in blandit turpis.
-                                                        </div>
-                                                    </div>
-                                                </Col>
-                                            </> 
-                                            
-                                        
-                                    }
-                                    
-                                </Row>
-                                </Container>
-                                </div>
+                            </Container>
+                        </div>
+                        <div className='parallax' data-direction="vertical" data-rate="0.1">
+                            <center>
+                                <span className="fotter">
+                                    created by <span className='logo'> {"<KopyTKG/>"} </span>            
+                                </span>
+                            </center>
+                        </div> 
                     </div>
+                    
                     <siv className="splitter">
                         <div className='bottom'>
                             <svg viewBox="0 0 1440 320">

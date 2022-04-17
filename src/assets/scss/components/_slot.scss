@@ -20,13 +20,15 @@
 
 .slot-margin {
     margin: 1vh 0;
+}
 
-    @media only screen and (min-width: 1000px) {
-        & img {
-            width: 80vw;
-        }
-    }
-    & img {
+
+.ico-logo {
+    width: 35vw;
+}
+
+@media only screen and (min-width: 1000px) {
+    .ico-logo {
         width: 20vw;
     }
 }

@@ -13,7 +13,7 @@
     }
     & .title {
         & #logo {
-            margin-top: 15vh;
+            margin-top: auto;
             width: 75vw;
             height: max-content;
             padding: 1.5vh 1vw;
@@ -51,23 +51,10 @@
         width: 100vw;
         height: max-content;
         z-index: 5;
-        padding-bottom: 20vh;
+        padding: 10vh 0 20vh 0;
         background: linear-gradient( $MainTop 0%, $MainBottom 100%);
-
-        & .logo {
-            color: white;
-            font-size: 50px;
-            font-weight: bolder;
-            width: max-content;
-            height: max-content;
-            line-height: 0;
-            padding: .8em .4em;
-            border-radius: 1em;
-            background-color: rgba(136, 136, 136, 0.075);
-            font-family: 'Comfortaa', cursive;
-        }
         & .info {
-            margin-top: 20vh;
+            margin-top: 10vh;
             color: white;
             font-size: 24px;
         }        
