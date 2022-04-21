@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Background from "../components/background";
 import Logo from "../components/svg/logo.svg";
-import Balloon from "../components/svg/balloon.svg";
 import Parallax from '../middleware/parallax';
 import { Col, Container, Row } from 'reactstrap';
+
+import SnakeImg from "./../assets/img/SnakeLogo2.png"
 
 const Layout = (props) => {
     const [limit, setLimit] = useState(false);
@@ -57,7 +58,7 @@ const Layout = (props) => {
                                         {props.settings["description"]}
                                     </Col>
                                 </Row>
-                                <br />
+                                <br/>
                                 <Row>
                                     <Col className="redirect">
                                         <center> 
@@ -72,8 +73,31 @@ const Layout = (props) => {
                                     </Col>
                                 </Row>
                             </Container>
+                            <br/>
+                            <Row >
+                                <Row className="project-section">
+                                    <Col xs="0" lg="3" />
+                                    <Col xs="6" lg="3" className="project-flex"> 
+                                        <a href="https://kopytkg.github.io/Snake-JS/" className="project-slot" target="_blank">
+                                            {/* <span className="project-box">
+                                                <span className="project-name">
+                                                     Snake Game
+                                                </span> 
+                                            </span> */}
+                                            <img className="project-icon" src={SnakeImg} />
+                                        </a>
+                                    </Col>
+                                    <Col xs="6" lg="3" className="project-flex">
+                                        <div className="project-slot"> 
+                                            Slot 
+                                        </div>
+                                    </Col>
+                                    <Col xs="0" lg="3" />
+                                </Row>
+
+                            </Row>
                         </div>
-                        <div className='parallax' data-direction="vertical" data-rate="0.1">
+                        <div className='parallax bottom' data-direction="vertical" data-rate="0.1">
                             <center>
                                 <span className="fotter">
                                     created by <span className='logo'> {"<KopyTKG/>"} </span>            
@@ -91,7 +115,6 @@ const Layout = (props) => {
                     </siv>
                 </div>
             </div>
-            <Balloon class="balloon" />
             <Background  density={density}/>
         </>
     );

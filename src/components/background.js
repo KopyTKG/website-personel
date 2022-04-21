@@ -1,5 +1,6 @@
 import React from "react";
 import anime from "animejs"
+import Balloon from "./svg/balloon.svg";
 
 class Background extends React.Component {
     constructor(props) {
@@ -44,24 +45,27 @@ class Background extends React.Component {
     render() {
       const { num } = this.state;
       return (
+        <>
         <div className="sky">
             <div>
               <svg id="sky">
                 {[...Array(num)].map((x, y) => (
                   <circle
-                    cx={this.getRandomX()}
-                    cy={this.getRandomY()}
-                    r={this.randomRadius()}
-                    stroke="none"
-                    strokeWidth="0"
-                    fill="white"
-                    key={y}
-                    className="star"
-                    />
-                    ))}
+                  cx={this.getRandomX()}
+                  cy={this.getRandomY()}
+                  r={this.randomRadius()}
+                  stroke="none"
+                  strokeWidth="0"
+                  fill="white"
+                  key={y}
+                  className="star"
+                  />
+                  ))}
               </svg>
             </div>
         </div>
+        <Balloon class="balloon" />
+        </>
       );
     }
   }

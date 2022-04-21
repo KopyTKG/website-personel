@@ -28,7 +28,7 @@
 
 .balloon {
     position: absolute;
-    top: 325vh;
+    top: calc(#{$DocumentHeight} - 50vh); 
     left: 75vw;
     fill: white;
     height: 5em;
