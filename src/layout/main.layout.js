@@ -78,7 +78,7 @@ const Layout = (props) => {
                                 <Row className="project-section">
                                     <Col xs="0" lg="3" />
                                     <Col xs="6" lg="3" className="project-flex"> 
-                                        <a href="https://kopytkg.github.io/Snake-JS/" className="project-slot" target="_blank">
+                                        <a href={process.env.PUBLIC_URL+"/routes/Snake-JS/index.html"} className="project-slot" target="_blank">
                                             {/* <span className="project-box">
                                                 <span className="project-name">
                                                      Snake Game

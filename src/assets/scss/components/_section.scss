@@ -63,7 +63,9 @@
             height: 150vh;
         }
         & .bottom {
-            margin-top: calc(#{$DocumentHeight} - 375vh);
+            position: absolute;
+            width: 100%;
+            top: calc(#{$DocumentHeight} - 160vh);
         }
     }
 }
