@@ -1,0 +1,38 @@
+.footer {
+    width: 100vw;
+    height: 20vh;
+    padding: 5vh 0;
+    background-color: $SecondaryColor;
+    justify-items: center;
+
+    & .link {
+        color: $PrimaryColor;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    & .copyright {
+        color: $PrimaryColor;
+    }
+}
+
+
+
+
+.fotter {
+    color: rgb(136, 136, 136);
+    & .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bolder;
+        width: max-content;
+        height: 24px;
+        line-height: 0;
+        margin-left: 10px;
+        padding: .6em .6em;
+        border-radius: 2em;
+        background-color: rgba(136, 136, 136, 0.075);
+        font-family: 'Comfortaa', cursive;
+    }
+}

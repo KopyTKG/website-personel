@@ -1,5 +1,9 @@
 ## Updates
 
+* V 0.0.8
+
+UI rework.
+
 * V 0.0.7
 
 UI redesign. signpost included.

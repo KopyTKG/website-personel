@@ -2,9 +2,9 @@
     position: absolute;
     top: 0;
     z-index: -1;
-    background: linear-gradient($DarkTop 0%, $DarkBottom 25%, $LightTop 50%, $LightBottom 100%);
-    width: $DocumentWidth;
-    height: $DocumentHeight;
+    background: linear-gradient($DarkTop 0%, $DarkBottom 100%);
+    width: 100vw;
+    height: 100vh;
 }
 
 #sky {
@@ -36,7 +36,7 @@
 
 .moon{
     position: absolute;
-    top: 100vh;
+    top: 25vh;
     left: 60vw;
     width: 25px;
     height: 25px;
