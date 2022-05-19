@@ -1,0 +1,27 @@
+.card {
+    background-color: map-get($colors, "darkgray");
+    border-radius: 5rem;
+    padding: 2rem;
+}
+
+.main-card {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: max-content;
+    padding: 5rem 0;
+    background-color: rgba($SecondaryColor, 0.80);
+}
+
+
+@media (min-width: 40rem) {
+    .main-card {
+        padding: 8rem 0;
+
+    }
+
+    .project {
+
+    }
+}

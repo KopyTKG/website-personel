@@ -1,11 +1,16 @@
-@import "./components/custom/variables";
+@import "./components/variables";
+
+/* Imports */
+@import "./components/mixins";
+
+
 @import "./components/grid";
+@import "./components/cards";
+@import "./components/buttons";
 @import "./components/custom/settings";
 @import "./components/custom/footer";
 @import "./components/flex";
 
-// custom scss
-@import "./components/custom/sky";
 
 // components
 @import "./components/default";

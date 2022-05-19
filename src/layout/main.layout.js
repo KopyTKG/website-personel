@@ -1,126 +1,113 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Background from "../components/background";
 import Logo from "../components/svg/logo.svg";
 import Parallax from '../middleware/parallax';
-import MainSplash from "../assets/img/background.png"
-import { Col, Container, Row } from 'reactstrap';
-
 import SnakeImg from "./../assets/img/SnakeLogo2.png"
 
 const Layout = (props) => {
-    const [density, setDensity] = useState(200);
+    const Modal = useRef();
+    const keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
+    const showModal = e => {
+        let modal = Modal.current;
+        modal.classList.add("display");
+        disableScroll();
+    }
 
-    useEffect(() => {
-        let vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        if(vw < 1000) 
-        {   
-            setDensity(100);
+    const hideModal = e => {
+        let modal = Modal.current;
+        modal.classList.remove("display");
+        enableScroll();
+    }
+    function preventDefault(e) {
+        e.preventDefault();
+      }
+      
+      function preventDefaultForScrollKeys(e) {
+        if (keys[e.keyCode]) {
+          preventDefault(e);
+          return false;
         }
-    }, [density, setDensity])
+      }
+      
+      // modern Chrome requires { passive: false } when adding event
+      var supportsPassive = false;
+      try {
+        window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+          get: function () { supportsPassive = true; } 
+        }));
+      } catch(e) {}
+      
+      var wheelOpt = supportsPassive ? { passive: false } : false;
+      var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+      
+    // call this to Disable
+    function disableScroll() {
+        window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+        window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+        window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+        window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+    }
+    
+    // call this to Enable
+    function enableScroll() {
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+        window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+        window.removeEventListener('touchmove', preventDefault, wheelOpt);
+        window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+    }
+    useEffect(() => {
+    }, [])
     
     return(
         <>
+            <div className="modal" ref={Modal} onClick={e => hideModal(e)}>
+                
+            </div>
             <section>
-                <div className="main-mask"/>
                 <div className="main-slot">
-                    <div className="title">
-                        {"<KopyTKG/>"}
-                    </div>
-                    <div className="description">
-                        {"Front-end UI/UX developer"}
+                    <div className="main-card">
+                        <div className="title">
+                            {"<KopyTKG/>"}
+                        </div>
+                        <div className="description">
+                            {"Front-end UI/UX developer"} <br/>
+                            <span className="subtext">FIND MORE <button className="btn btn-success-outline rounded" onClick={e => showModal(e)}> About me</button></span>
+                        </div>
                     </div>
                 </div>
                 <div className="main-splash"/>
             </section> 
             <section>
-                <div className="about-splash">
-                    About
-                </div>
-            </section>
-            <div className="section">
-                    <div className="main">
-                        <div className='info'>
-                            <Container>
-                                <Row>
-                                    <Col lg="2"/>
-                                    <Col xs="12" lg="4" className='slot-margin'>
-                                        <center>
-                                            <img className="ico-logo" src={process.env.PUBLIC_URL + '/img/logo.png'} /> 
-                                        </center>
-                                    </Col>
-                                    <Col xs="12" lg="4" className="description">
-                                        <span className="title"> Kdo jsem? </span><br/>
-                                        {props.settings["description"]}
-                                    </Col>
-                                </Row>
-                                <br/>
-                                <Row>
-                                    <Col className="redirect">
-                                        <center> 
-                                            kde mě najdeš? 
-                                            &nbsp;
-                                            - 
-                                            &nbsp;
-                                            <a href="https://signpost.definitelynotawebsite.website" className="btn-secondary btn"> 
-                                                signpost 
-                                            </a>
-                                        </center>
-                                    </Col>
-                                </Row>
-                            </Container>
-                            <br/>
-                            <Row >
-                                <Row className="project-section">
-                                    <Col xs="0" lg="3" />
-                                    <Col xs="6" lg="3" className="project-flex"> 
-                                        <a href={process.env.PUBLIC_URL+"/routes/Snake-JS/index.html"} className="project-slot" target="_blank">
-                                            {/* <span className="project-box">
-                                                <span className="project-name">
-                                                     Snake Game
-                                                </span> 
-                                            </span> */}
-                                            <img className="project-icon" src={SnakeImg} />
-                                        </a>
-                                    </Col>
-                                    <Col xs="6" lg="3" className="project-flex">
-                                        <div className="project-slot"> 
-                                            Slot 
-                                        </div>
-                                    </Col>
-                                    <Col xs="0" lg="3" />
-                                </Row>
+                
 
-                            </Row>
-                        </div>
-                        
-                    </div>
-            </div>
+            </section>
+            
             <footer className="footer grid gap-1rem">
-                            <div className="grid-col-span-3">
-                                <span className="fotter">
-                                    created by <span className='logo'> {"<KopyTKG/>"} </span>            
-                                </span>
-                            </div>
-                            <div className="grid-col-span-3">
-                                <div className="grid grid-col-3 gap-5rem ">
-                                    <div>
-                                        <a className="link" href="#">Github</a>
-                                    </div>
-                                    <div>
-                                        <a className="link" href="#">Twitter</a>
-                                    </div>
-                                    <div>
-                                        <a className="link" href="#">Instagram</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="grid-col-span-3">
-                                <span className="copyright">
-                                    © 2022 definitelynotawebsite.website
-                                </span>
-                            </div>
-                        </footer> 
+                <div className="grid-col-span-3">
+                    <span className="fotter">
+                        created by <a href="https://github.com/kopytkg/" target="_blank" className="btn btn-success-outline rounded">{"<KopyTKG/>"} </a>            
+                    </span>
+                </div>
+                <div className="grid-col-span-3">
+                    <div className="grid grid-col-3 gap-2rem ">
+                        <div>
+                            <a className="btn btn-success-dark" href="https://github.com/kopytkg">Github</a>
+                        </div>
+                        <div>
+                            <a className="btn btn-success-dark" href="https://twitter.com/kopy_tkg">Twitter</a>
+                        </div>
+                        <div>
+                            <a className="btn btn-success-dark" href="https://www.instagram.com/kopy_tkg/">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <div className="grid-col-span-3">
+                    <span className="copyright">
+                        © 2022 definitelynotawebsite.website
+                    </span>
+                </div>
+            </footer> 
         </>
     );
 };
