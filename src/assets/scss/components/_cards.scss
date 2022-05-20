@@ -41,6 +41,8 @@
         & .svg-profile{
             margin-top: 2rem;
             display: grid;
+            align-items: center;
+            justify-items: center;
             grid-template-columns: repeat(3, 1fr);
             & svg {
                 width: 2rem;
