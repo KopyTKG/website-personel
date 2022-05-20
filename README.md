@@ -1,4 +1,8 @@
 ## Updates
+* V 0.1.0 
+
+UI rework. Part 3 -> profile card added.
+
 * V 0.0.9
 
 UI rework. Part 2 -> scss added. UI/UX elements added.

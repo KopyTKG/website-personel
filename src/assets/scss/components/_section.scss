@@ -136,7 +136,7 @@ section {
         & .bottom {
             position: absolute;
             width: 100%;
-            top: calc(#{$DocumentHeight} - 160vh);
+            //top: calc( - 160vh);
         }
     }
 }
