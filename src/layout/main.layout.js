@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Background from "../components/background";
 import Logo from "../components/svg/logo.svg";
 import Parallax from '../middleware/parallax';
-import ProfileSplash from "./../assets/img/profile.png"
+import Signpost from "./../assets/img/signpost.png"
 
 const Layout = (props) => {
     const Modal = useRef();
@@ -110,8 +110,25 @@ const Layout = (props) => {
                 <div className="main-splash"/>
             </section> 
             <section>
-                
-
+                <header>
+                    <span className="sub-title">My projects</span> <br/>
+                    <span className="title">Latest work</span>
+                </header>
+                <div className="projects">
+                    <div className="card">
+                        <div className="project-img" style={{
+                            background: "url("+Signpost+")",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center"}}>
+                            <div className="project-number">
+                                01
+                            </div>
+                            <div className="project-name">
+                                Signpost
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             
             <footer className="footer grid gap-1rem">

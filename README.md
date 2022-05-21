@@ -1,4 +1,8 @@
 ## Updates
+* V 0.1.1
+
+Projects added.
+
 * V 0.1.0 
 
 UI rework. Part 3 -> profile card added.

@@ -3,6 +3,44 @@
     border-radius: $CardRadius;
 }
 
+.project-img {
+    width: calc(100% - 1rem);
+    height: 20rem;
+    margin: .5rem;
+    background-color: rgb(97, 97, 97);
+    border-radius: $CardRadius;
+    & .project-number {
+        color: rgba($AccientColor, 0);
+        font-size: 4rem;
+        font-weight: bold;
+        transition: ease-in-out .2s;
+        width: 100%;
+        text-align: right;
+        line-height: 4rem;
+    }
+    & .project-name {
+        border-radius: $CardRadius;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+        transition: ease-in-out .2s;
+        height: calc(100% - 5rem);
+        background-color: none;
+        color: rgba($color: $AccientColor, $alpha: 0.25);
+        font-weight: bold;
+        font-size: 3rem;
+        display: flex;
+        align-items: flex-end;
+    }
+    &:hover {
+        & .project-number {
+            color: $AccientColor;
+        }
+        & .project-name {
+        background: linear-gradient(to bottom, transparent 0%, black 100%);
+            color: rgba($color: $AccientColor, $alpha: 1);
+        }  
+    }
+}
 
 .profile {
     width: 100vw;
@@ -72,6 +110,13 @@
 
 
 @media (min-width: 40rem) {
+    .card {
+        width: max-content;
+    }
+    .project-img {
+        width: 40rem;
+        height: 25rem;
+    }
     .profile {
         width: 60rem;
         height: 40rem;
@@ -95,10 +140,6 @@
     }
     .main-card {
         padding: 8rem 0;
-
-    }
-
-    .project {
 
     }
 }

@@ -5,15 +5,14 @@ section {
     width: 100vw;
     min-height: 100vh;
     background-color: $SecondaryColor;
-/*    
-    & .main-mask {
-        position: absolute;
-        background-color: $SecondaryColor;
-        height: 100vh;
+
+    & .projects {
+        padding: 2rem 0;
         width: 100vw;
-        right: -35vw;
-        transform: skew(20deg);
-    }*/
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    } 
     & .main-slot {
         position: absolute;
         width: 100vw;
@@ -59,8 +58,7 @@ section {
 .section {
     width: 100vw;
     height: 100vh;
-    background-color: transparent;
-    
+    background-color: transparent;   
     & .main-mask {
         position: absolute;
         background-color: $SecondaryColor;
@@ -106,39 +104,6 @@ section {
         align-items: center;
     }
 
-    & .splitter {
-        padding: 0;
-        margin-bottom: -1vh;
-        z-index: 5;
-        //fill: black;
-        & .top {
-            fill: $MainTop;
-        }
-        
-        & .bottom {
-            fill:$MainBottom;
-        }
-    }
-    & .main {
-        width: 100vw;
-        z-index: 5;
-        padding: 10vh 0 20vh 0;
-        background-color: $SecondaryColor;
-        & .info {
-            margin-top: 10vh;
-            color: white;
-            font-size: 24px;
-        }        
-        & .scroller {
-            margin-top: 10vh;
-            height: 150vh;
-        }
-        & .bottom {
-            position: absolute;
-            width: 100%;
-            //top: calc( - 160vh);
-        }
-    }
 }
 
 
@@ -182,6 +147,9 @@ section {
 
 @media (min-width: 40em) {
     section {
+        & .projects {
+            justify-items: center;
+        }
         & .main-slot {
             & .title {
                 font-size: 6rem;
