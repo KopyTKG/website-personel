@@ -109,25 +109,27 @@ const Layout = (props) => {
                 </div>
                 <div className="main-splash"/>
             </section> 
-            <section>
+            <section className="project-section">
                 <header>
                     <span className="sub-title">My projects</span> <br/>
                     <span className="title">Latest work</span>
                 </header>
                 <div className="projects">
-                    <div className="card">
+                    <a className="card" target="_blank" href="#">
                         <div className="project-img" style={{
                             background: "url("+Signpost+")",
                             backgroundSize: "cover",
                             backgroundPosition: "center"}}>
-                            <div className="project-number">
-                                01
-                            </div>
-                            <div className="project-name">
-                                Signpost
+                            <div className="project-modal">
+                                <div className="project-number">
+                                    01
+                                </div>
+                                <div className="project-name">
+                                    Signpost
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </section>
             
@@ -152,7 +154,7 @@ const Layout = (props) => {
                 </div>
                 <div className="grid-col-span-3">
                     <span className="copyright">
-                        © 2022 definitelynotawebsite.website
+                        © {new Date(Date.now()).getFullYear()} definitelynotawebsite.website
                     </span>
                 </div>
             </footer> 
