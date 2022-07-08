@@ -56,20 +56,32 @@
         margin: .5rem;
         background-color: rgb(48, 48, 48);
         border-radius: calc(($CardRadius/3)*2);
-        
+        & .project-background {
+            position: relative;
+            z-index:0;
+            border-radius: calc(($CardRadius/3)*2);
+            height: 100%;
+            width: 100%;
+        }
+        & .iframe-modal {
+            margin-top: -25rem;
+        }
         & .project-modal {
-            background-color: transparent;
+            position: relative;
+            z-index: 10;
+            @include ease($ModalTime);
+            background: linear-gradient(to bottom, transparent 0%, black 100%);
+            opacity: 0;
             border-radius: calc(($CardRadius/3)*2);
             height: 100%;
             width: 100%;
             display: grid;
-            grid-template-rows: 20%, 80%;
-            transition: ease-in-out .2s;
+            //grid-template-rows: 20%, 80%;
         
             & .project-number {
+                @include ease($ModalTime);
                 width: 100%;
                 color: rgba($AccientColor, 0);
-                transition: ease-in-out .2s;
                 font-size: 4rem;
                 font-weight: bold;
                 text-align: right;
@@ -77,17 +89,21 @@
             }
 
             & .project-name {
+                @include ease($ModalTime);
                 width: 100%;
-                color: rgba($color: $AccientColor, $alpha: 0.25);
-                
-                transition: ease-in-out .2s;
-                background-color: none;
+                margin-bottom: .95rem;
+                margin-left: .5rem;
+                color: rgba($AccientColor, 0);
+                background-color: transparent;
                 font-weight: bold;
+                display: flex;
+                align-self: flex-end;
+                line-height: 3rem;
                 font-size: 3rem;
             }
-
-        &:hover {
-            background: linear-gradient(to bottom, transparent 0%, black 100%);
+        }
+        & .project-modal:hover {
+            opacity: 1;
             color: rgba($color: $AccientColor, $alpha: 1);
             & .project-number {
                 color: $AccientColor;
@@ -97,10 +113,6 @@
             }
         }
     }
-}
-
-    
-    
 }
 
 @media (min-width: 40rem) {
