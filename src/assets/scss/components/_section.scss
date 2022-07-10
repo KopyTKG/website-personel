@@ -4,56 +4,55 @@
 section {
     width: 100vw;
     min-height: 100vh;
-    background-color: $SecondaryColor;
-
-    & .projects {
-        padding: 2rem 0;
-        width: 100vw;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    } 
-    & .main-slot {
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        right: 0;
-        display: flex;
-        background-color: transparent;
-        flex-direction: column;
-        justify-content: center;
-        color: $PrimaryColor;
-        font-family: 'Raleway', sans-serif;
-        & .title {
-            text-align: center;
-            font-size: 3.5rem;
-            font-weight: bold;
-        }
-        & .description {
-            color: $AccientColor !important;
-            font-size: 1.4rem;
-            & .subtext {
-                width: 100%;
-                text-align: center;
-                font-size: .8rem;
-                font-weight: 700;
-            }
-        }
-    }
-    & .main-splash {
-        height: 100vh;
-        width: 100vw;
-        background: url("../../img/background.png");
-        background-position: center;
-        background-size: cover;
-    }
-
-    & .about-splash {
-        color: $NoiseColor;
-        font-size: 50rem;
+    background-color: transparent;
+}
+.project-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content;
+    gap: 2rem;
+    height: min-content;
+} 
+ .main-slot {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    display: flex;
+    background-color: transparent;
+    flex-direction: column;
+    justify-content: center;
+    color: $PrimaryColor;
+    font-family: 'Raleway', sans-serif;
+    & .title {
+        text-align: center;
+        font-size: 3.5rem;
         font-weight: bold;
     }
+    & .description {
+        color: $AccientColor !important;
+        font-size: 1.4rem;
+        & .subtext {
+            width: 100%;
+            text-align: center;
+            font-size: .8rem;
+            font-weight: 700;
+        }
+    }
 }
+.main-splash {
+    height: 100vh;
+    width: 100vw;
+    background: url("../../img/background.png");
+    background-position: center;
+    background-size: cover;
+}
+.about-splash {
+    color: $NoiseColor;
+    font-size: 50rem;
+    font-weight: bold;
+}
+
 
 .section {
     width: 100vw;
@@ -146,11 +145,11 @@ section {
 
 
 @media (min-width: 40em) {
-    section {
-        & .projects {
+    
+         .project-section {
             justify-items: center;
         }
-        & .main-slot {
+         .main-slot {
             & .title {
                 font-size: 6rem;
                 font-weight: bold;
@@ -166,7 +165,7 @@ section {
                 }
             }
         }
-    }
+    
 
     #logo {
         max-width: 50vw;

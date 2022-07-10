@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import {useEffect, useRef } from "react";
 import ProjectList from "../components/assets/projects";
+import Header from "../components/project.header";
 
 
 const Layout = (props) => {
@@ -109,18 +110,20 @@ const Layout = (props) => {
             </section> 
             <section className="project-section">
                 <header>
-                    <span className="sub-title">My projects</span> <br/>
+                    <span className="sub-title">Personal projects</span> <br/>
                     <span className="title">Latest work</span>
                 </header>
                <ProjectList/>
             </section>
             <section className="project-section">
                 <header>
-                    <span className="title">Other projects</span> <br/>
+                    <span className="sub-title">Public projects</span> <br/>
+                    <span className="title">Latest work</span>
                 </header>
-                <div className="grid grid-col-1">
+                <div className="project-body">
                     <div className="projects">
-                        <a className="card" target="_blank" href="https://thekrew.app/">
+                        
+                        <a className="card" target="_blank" href="https://thekrew.app/" rel="noreferrer">
                             <div className="project-img">
                                 <iframe src="https://thekrew.app/" scrolling="no" style={{zIndex: 0}} disabled className="project-background" title="mainSite"/>
                                 <div className="project-modal iframe-modal" style={{zIndex: 10}}>
@@ -133,13 +136,19 @@ const Layout = (props) => {
                                 </div>
                             </div>
                         </a>
+                        <Header
+                        Title="The Krew Site"
+                        Update="08.07.2022"
+                        >
+                            The krew website is my side project for our gamer group. All is power by <b>React</b> and <b>SASS</b>. It is still work in progress.
+                        </Header>
                     </div>
                 </div>
             </section>
             <footer className="footer grid gap-1rem">
                 <div className="grid-col-span-3">
                     <span className="fotter">
-                        created by <a href="https://github.com/kopytkg/" target="_blank" className="btn btn-success-outline rounded">{"<KopyTKG/>"} </a>            
+                        created by <a href="https://github.com/kopytkg/" target="_blank" className="btn btn-success-outline rounded" rel="noreferrer">{"<KopyTKG/>"} </a>            
                     </span>
                 </div>
                 <div className="grid-col-span-3">

@@ -1,5 +1,43 @@
-.project-section {
-    width: 100vw;
+.projects{
+    //padding:  0 30rem ;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items:auto;
+    & .project-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: calc(100% - 2rem);
+        height: 100%;
+        padding: 0 1rem;
+        & .project-title {
+            color: $PrimaryColor;
+            font-weight: bolder;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        & .project-description {
+            font-size: 1.2rem;
+            color: $AccientColor;
+            & .project-update {
+                float: right;
+                margin-top: 4rem;
+                color: lighten($AccientColor, 5%);
+                font-weight: 500;
+                & .update {
+                    font-weight: bold;
+                }
+            }
+        }
+        & .line {
+            width: 100%;
+            height: .4rem;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            background-color: rgba($AccientColor, 0.4);
+        }
+    }
     & .project-flex {
         display: flex;
         justify-content: center;
@@ -64,7 +102,7 @@
             width: 100%;
         }
         & .iframe-modal {
-            margin-top: -25rem;
+            margin-top: -20rem;
         }
         & .project-modal {
             position: relative;
@@ -115,11 +153,26 @@
     }
 }
 
-@media (min-width: 40rem) {
-    .project-section {
+@media (min-width: 41rem) {
+    .projects {
         & .project-img {
             width: 40rem;
             height: 25rem;
+            & .iframe-modal {
+                margin-top: -25rem;
+            }
+        }
+        & .project-header {
+            width: 40rem;
+        }
+    }
+}
+
+@media (min-width: 84.5rem) {
+    .projects {
+        grid-template-columns: 1fr 1fr;
+        & .project-header .line {
+            display: none;
         }
     }
 }
