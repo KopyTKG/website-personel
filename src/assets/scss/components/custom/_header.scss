@@ -1,0 +1,17 @@
+header {
+    padding-top: 4rem;
+    width: 100%;
+    height: min-content;
+    text-align: center;
+
+    & .sub-title {
+        color: $AccientColor;
+        font-size: 1.3rem;
+    }
+    
+    & .title {
+        color: $PrimaryColor;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}

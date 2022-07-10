@@ -1,31 +1,36 @@
-# Create React App
+## Updates
+* V 0.1.1
 
-This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
+Projects added.
 
-## Deploy Your Own
+* V 0.1.0 
 
-Deploy your own Create React App project with Vercel.
+UI rework. Part 3 -> profile card added.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app&template=create-react-app)
+* V 0.0.9
 
-_Live Example: https://create-react-template.vercel.app/_
+UI rework. Part 2 -> scss added. UI/UX elements added.
 
-## Available Scripts
+* V 0.0.8
 
-In the project directory, you can run:
+UI rework.
 
-### `npm start`
+* V 0.0.7
 
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+UI redesign. signpost included.
 
-The page will reload when you make changes. You may also see any lint errors in the console.
+* V 0.0.6
 
-### `npm test`
+title has been changed + icon. Background added a balloon. Changed logo on the site.
 
-Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* V 0.0.5
 
-### `npm run build`
+background rework into scss vars. Rednder rework for phones.
 
-Builds the app for production to the `build` folder.
+* V 0.0.4
 
-It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+added a main slots and svgs for all platforms. Bootstrap added for responsive styling.
+
+* V 0.0.3
+
+sky bg reworked. Color gradiant changed from (L to R) to (T to B). Moon added to bg.

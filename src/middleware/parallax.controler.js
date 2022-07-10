@@ -1,4 +1,4 @@
-const Parallax = (props) => {
+const ParallaxController = (props) => {
     const render = () => {
         window.addEventListener("scroll", () => {
             const target = document.querySelectorAll(".parallax");
@@ -23,4 +23,4 @@ const Parallax = (props) => {
     </>);
 }
 
-export default Parallax;
+export default ParallaxController;

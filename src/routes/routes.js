@@ -1,9 +1,12 @@
-import App from "../temp/App";
+import Layout from "../layout/main.layout";
+import ParallaxController from "../middleware/parallax.controler";
 
-export default () => {
+export default (props) => {
     return(
         <> 
-        <App/>
+        <ParallaxController >
+            <Layout settings={props.settings}/>
+        </ParallaxController>
         </>
     );
 }

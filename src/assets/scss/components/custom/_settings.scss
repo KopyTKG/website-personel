@@ -1,0 +1,14 @@
+.description {
+    font-size: 1rem;
+    text-align: center;
+    & .title {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+}
+
+.redirect {
+    color: rgb(170, 170, 170);
+    font-size: 14px;
+}
