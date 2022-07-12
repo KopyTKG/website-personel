@@ -1,0 +1,14 @@
+code {
+    font-family: 'IBM Plex Mono', monospace;
+    color: lighten(gray, 15%);
+    padding: .5rem;
+    outline: white solid 2px;
+    border-radius: 1rem;
+  }
+
+.code {
+    & h2 {
+        color: $AccientColor;
+        margin: 2rem 0 1rem 0;
+    }
+}
