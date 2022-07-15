@@ -1,0 +1,29 @@
+.splitter {
+    margin: 2rem 0 ;
+    width: 100vw;
+    height: 10rem;
+    background-color: $SecondaryColor;
+
+    .splitter-img {
+        width: 100vw;
+        height: 10rem;
+        background-image: url(../../img/splitter.png);
+        background-position: center;
+        background-size: cover;
+    }
+    .splitter-blend {
+        width: 100vw;
+        height: 10rem;
+        position: relative;
+        margin-top: -10rem;
+        background: linear-gradient(to bottom, $SecondaryColor 0%, rgba($SecondaryColor, 0.4) 50%, $SecondaryColor 100%);
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+    .splitter-line {
+        width: 100vw;
+        height: 1rem;
+        background: linear-gradient(transparent 0%, rgba($PrimaryColor, 0.1) 5% ,rgba($PrimaryColor, 0.6) 50%, rgba($PrimaryColor, 0.1)95%, transparent 100%);
+    }
+}

@@ -116,6 +116,12 @@ const Layout = () => {
                 </header>
                <ProjectList/>
             </section>
+            <div className="splitter">
+                <div className="splitter-img" />
+                <div className="splitter-blend">
+                    <div className="splitter-line"/>
+                </div>
+            </div>
             <section className="project-section">
                 <header>
                     <span className="sub-title">Public projects</span> <br/>
