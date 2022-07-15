@@ -32,7 +32,7 @@ const DevView = () => {
                         <code onClick={() => handleCopy(row.command)} children={row.command}/> 
                         <br/>
                         <br/>
-                        <a className='file' href={row.config} download target="_blank">DOWNLOAD CONFIG</a>
+                        <a className='file' href={row.config} download target="_blank" rel="noreferrer">DOWNLOAD CONFIG</a>
                     </div>
                 </>);
             })
