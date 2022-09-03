@@ -113,6 +113,7 @@
             border-radius: calc(($CardRadius/3)*2);
             height: 100%;
             width: 100%;
+            margin-right: 2em;
             display: grid;
             //grid-template-rows: 20%, 80%;
         
@@ -124,6 +125,7 @@
                 font-weight: bold;
                 text-align: right;
                 line-height: 4rem;
+               
             }
 
             & .project-name {
