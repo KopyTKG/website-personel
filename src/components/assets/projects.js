@@ -26,12 +26,12 @@ const ProjectList = (props) => {
                 >
                     Signpost is open-source project. It is my atempt to recreate linktree like web application. <b>React</b> was used to create this web application.
                 </Header>
-            </div>
-            <div className="projects">
 
                 <a className="card" target="_blank" href="https://github.com/KopyTKG/Macroboard/" rel="noreferrer">
                     <div className="project-img">
-                        <img style={{zIndex: 0}}  className="project-background" src={Macroboard}/>
+                        <div style={{zIndex: 0}}  className="project-background">
+                        <img src={Macroboard} style={{width: "100%", height: "100%", borderRadius: "1rem"}}/>
+                    </div>
                         <div className="project-modal iframe-modal" style={{zIndex: 10}}>
                             <div className="project-number">
                                 02
@@ -48,7 +48,7 @@ const ProjectList = (props) => {
                 >
                  Custome build PCB for numerical keyboard. All powered with Arduino Leonardo.
                 </Header>
-                </div>
+            </div>
         </>
     );
 }
