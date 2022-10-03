@@ -1,0 +1,35 @@
+.list {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    gap: 2rem;
+}
+
+.block {
+    border-radius: 2rem;
+    background-color: lighten($SecondaryColor, 8%);    
+    display: grid;
+    height: 35rem;
+    grid-template-columns: 70% 30%;
+    
+    & .text {
+        padding: 2rem ;
+    }
+
+    & .thumbnail {
+        width: 100%;
+        background-size: cover;
+        border-radius: 0 2rem 2rem 0 ;
+
+    }
+}
+
+
+@media (min-width: 80rem) {
+    .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
