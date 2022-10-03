@@ -1,5 +1,4 @@
 import Header from "../project.header";
-import Signpost from "./../../assets/img/signpost.png"
 import Macroboard from "./../../assets/img/Macroboard.png"
 
 const ProjectList = (props) => {
