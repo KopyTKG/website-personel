@@ -28,3 +28,7 @@
 @import "./components/code";
 @import "./components/splitter";
 
+
+// Fallbacks
+@import "./components/fallbacks/spinner";
+@import "./components/fallbacks/card";

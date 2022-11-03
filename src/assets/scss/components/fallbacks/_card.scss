@@ -1,0 +1,72 @@
+.fallback-project {
+        //padding:  0 30rem ;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        justify-items:auto;
+        & .fallback-card {
+            height: 20rem;
+            width: calc(100% - 1rem);
+            margin: .5rem;
+            background: linear-gradient(110deg, #2e2e2e 20%, #4d4d4d 30%, #2e2e2e 40%);
+            border-radius: calc(($CardRadius/3)*2);
+            background-size: 200% 100%;
+            animation: 1.5s shine linear infinite;
+        }
+        & .fallback-header {
+            height: 20rem;
+            width: calc(100% - 1rem);
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+            justify-content: center;
+            & .fallback-title {
+                width: 10rem;
+                height: 4rem;
+                border-radius: 1rem;
+                background: linear-gradient(110deg, #2e2e2e 20%, #4d4d4d 30%, #2e2e2e 40%);
+                border-radius: calc(($CardRadius/3)*2);
+                background-size: 200% 100%;
+                animation: 1.5s shine linear infinite;
+            }
+            & .fallback-text {
+                width: 15rem;
+                height: 2rem;
+                border-radius: .2rem;
+                background: linear-gradient(110deg, #2e2e2e 20%, #4d4d4d 30%, #2e2e2e 40%);
+                border-radius: calc(($CardRadius/3)*2);
+                background-size: 200% 100%;
+                animation: 1.5s shine linear infinite;
+            }
+
+        }
+}
+
+@media (min-width: 41rem) {
+    .fallback-project {
+        & .fallback-card {
+            width: 40rem;
+            height: 25rem;
+        }
+        & .fallback-header {
+            width: 40rem;
+            height: 25rem;
+        }
+    }
+}
+
+@media (min-width: 84.5rem) {
+    .fallback-project {
+        grid-template-columns: 1fr 1fr;
+        & .fallback-card {
+            width: 40rem;
+            height: 25rem;
+        }
+    }
+}
+
+@keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
+  }
