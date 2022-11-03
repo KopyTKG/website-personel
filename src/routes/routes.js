@@ -1,21 +1,25 @@
+import React,{Suspense} from "react";
 import { NotificationContainer } from "react-notifications";
 import { BrowserRouter, Navigate, Route, Routes, useParams,  } from "react-router-dom";
 import Navbar from "../components/navbar";
-import Layout from "../layout/main.layout";
 import ParallaxController from "../middleware/parallax.controler";
+import Fallback from "../components/fallback";
 import DevView from "../views/devmode.view";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
+    const Layout = React.lazy(() => import("../layout/main.layout"))
     return(
         <> 
         <BrowserRouter>
             <NotificationContainer />
             <Routes>
                 <Route path="/" element={
-                <ParallaxController >
-                    <Layout/>
-                </ParallaxController>
+                    <Suspense fallback={<Fallback />}>
+                        <ParallaxController >
+                                <Layout/>
+                        </ParallaxController>
+                    </Suspense>
                 }>
                 </Route>
                 <Route path=":any/*" element={<Redirect />}/>
