@@ -128,9 +128,9 @@ const Layout = () => {
                 <div className="project-body">
                     <div className="projects">
                         
-                        <a className="card" target="_blank" href="https://thekrew.app/" rel="noreferrer">
+                        <a className="card" target="_blank" href="https://project.thekrew.app/" rel="noreferrer">
                             <div className="project-img">
-                                <iframe src="https://thekrew.app/" scrolling="no" style={{zIndex: 0}} disabled className="project-background" title="mainSite"/>
+                                <iframe src="https://project.thekrew.app/" scrolling="no" style={{zIndex: 0}} disabled className="project-background" title="mainSite"/>
                                 <div className="project-modal iframe-modal" style={{zIndex: 10}}>
                                     <div className="project-number">
                                         01
