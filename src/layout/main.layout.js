@@ -2,7 +2,6 @@ import {Suspense, useEffect, useRef, lazy} from "react";
 import DevMod from "../components/float.asset";
 import {Twitter, Github, Discord} from "../assets/@svg/react/solid"
 import FallbackCard from "../components/fallback.card";
-
 import Macroboard from "../assets/img/Macroboard.png"
 import MainBG from "../assets/img/background.png"
 import BackupBG from "../assets/img/background-backup.png"
