@@ -2,9 +2,7 @@ import React,{Suspense} from "react";
 import { NotificationContainer } from "react-notifications";
 import { BrowserRouter, Navigate, Route, Routes, useParams,  } from "react-router-dom";
 import Navbar from "../components/navbar";
-import ParallaxController from "../middleware/parallax.controler";
 import Fallback from "../components/fallback";
-import DevView from "../views/devmode.view";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
@@ -16,9 +14,7 @@ export default () => {
             <Routes>
                 <Route path="/" element={
                     <Suspense fallback={<Fallback />}>
-                        <ParallaxController >
-                                <Layout/>
-                        </ParallaxController>
+                        <Layout/>
                     </Suspense>
                 }>
                 </Route>
@@ -32,15 +28,20 @@ export default () => {
 
 const Redirect = () => {
     let {any} = useParams();
+    const DevView = React.lazy(() => import("../views/devmode.view"))
+
     return(
         <>
             {localStorage.getItem("dev") === "true" && any === "dev"?
             <>
                 <Navbar/>
                 <Routes>
-                    <Route path="/" element={<DevView />} >
-                    </Route>
-                    <Route path=":any/*" element={<Navigate to="/dev" replace={true}/>}/>
+                        <Route path="/" element={
+                            <Suspense fallback={<Fallback />}>
+                                <DevView />
+                            </Suspense>
+                        } />
+                        <Route path=":any/*" element={<Navigate to="/dev" replace={true}/>}/>
                 </Routes>
             </>
             :
