@@ -4,45 +4,32 @@ const ProjectList = ({projects}) => {
 
     return(
         <>
-            <div className="projects">
+            <div className="project-grid">
             {
-                projects.map((data, Index) => {
+                projects.map((data, index) => {
                     return(<>
-                        <a className="card" target="_blank" href={data.url} rel="noreferrer">
-                            <div className="project-img">
+                        <a className="card-body" target="_blank" href={data.url} rel="noreferrer">
+                            <div className="card-head">
                                 {data.type == "iframe"? <>
-                                        <iframe src={data.src} scrolling="no" loading="lazy" style={{zIndex: 0}} disabled className="project-background" title={data.title}/>
-                                        <div className="project-modal iframe-modal" style={{zIndex: 10}}>
-                                            <div className="project-number">
-                                                {Index+1}
-                                            </div>
-                                            <div className="project-name">
-                                                {data.title}
-                                            </div>
-                                        </div>
+                                    <iframe src={data.src} className="card-icon" style={{zIndex: -1}} scrolling="no" loading="lazy" disabled title={data.title}/>    
+                                    <div className="card-dummy" />
                                     </>
-                                :<>
-                                        <div style={{zIndex: 0}}  className="project-background">
-                                            <img src={data.src} style={{width: "100%", height: "100%", borderRadius: "1rem"}}/>
-                                        </div>
-                                        <div className="project-modal iframe-modal" style={{zIndex: 10}}>
-                                            <div className="project-number">
-                                                {Index+1}
-                                            </div>
-                                            <div className="project-name">
-                                                {data.title}
-                                            </div>
-                                        </div>
-                                    </>
+                                :<>     
+                                    <img src={data.src} className="card-icon" alt={data.title}/>
+                                    <div className="card-dummy" />
+                                </>
                                 }
                             </div>
+                            <div className="card-title">
+                                {(index+1)+")"}&nbsp;&nbsp;{data.title}
+                            </div>
+                            <div className="card-desc">
+                                {data.desc}
+                            </div>
+                            <div className="card-update">
+                                Last update: <span className="card-date">{data.update}</span>
+                            </div>
                         </a>
-                        <Header
-                        Title={data.title}
-                        Update={data.update}
-                        >
-                           {data.desc}
-                        </Header>
                     </>);
                 })
             }

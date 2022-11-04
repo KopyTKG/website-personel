@@ -4,11 +4,10 @@ section {
     background-color: transparent;
 }
 .project-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
-    height: min-content;
 } 
  .main-slot {
     position: absolute;
