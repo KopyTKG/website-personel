@@ -83,6 +83,7 @@ section {
         & .title {
             font-size: 6rem;
             font-weight: bold;
+            background: linear-gradient(to right, $AccientColor, white, $AccientColor);
         }
         & .description {
             color: $AccientColor !important;
@@ -136,6 +137,13 @@ section {
             & .title {
                 font-size: 6rem;
                 font-weight: bold;
+                animation: background-pan 10s ease-in-out infinite;
+                background: linear-gradient(to right, $PrimaryColor 40%,darken($AccientColor, 25%) 45%,  lighten($AccientColor, 40%) 50%,darken($AccientColor, 25%) 55%, $PrimaryColor 60%);
+                -webkit-background-clip: text;
+                background-size: 200%;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                white-space: nowrap;
             }
             & .description {
                 color: $AccientColor !important;

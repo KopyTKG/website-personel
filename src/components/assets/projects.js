@@ -1,4 +1,3 @@
-import Header from "../project.header";
 const ProjectList = ({projects}) => {
 
 
@@ -9,8 +8,8 @@ const ProjectList = ({projects}) => {
                 projects.map((data, index) => {
                     return(<>
                         <a className="card-body" target="_blank" href={data.url} rel="noreferrer">
-                            <div className="card-head">
-                                {data.type == "iframe"? <>
+                            <div className="card-head" style={{animationDelay: index*2+"s"}}>
+                                {data.type === "iframe"? <>
                                     <iframe src={data.src} className="card-icon" style={{zIndex: -1}} scrolling="no" loading="lazy" disabled title={data.title}/>    
                                     <div className="card-dummy" />
                                     </>
