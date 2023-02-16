@@ -147,16 +147,25 @@ const Layout = () => {
                     <span className="title">Latest work</span>
                 </header>
                 <Suspense fallback={<>
+                    <div className="project-grid">  
                     {projects.map((data,index)=> {
                         return(<>
                             <FallbackCard/>
                         </>)
                     })}
+                    </div>
                 </>
                 }>
                     
                     <ProjectList projects={projects}/>
                 </Suspense>
+            </section>
+            <section className="project-section">
+                <header>
+                    <span className="sub-title">Blender playground</span> <br/>
+                    <span className="title">Latest work</span>
+                </header>
+                
             </section>
             <footer className="footer grid gap-1rem">
                 <div className="grid-col-span-3">
