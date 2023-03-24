@@ -62,7 +62,7 @@ const Layout = () => {
         window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
     }
     useEffect(() => {
-        fetch("https://gist.githubusercontent.com/KopyTKG/08dab4b2805b0fcb5e1e8f9929e73a7e/raw/e4259d2842738d83f5da247c2cb6200ea91f7cf0/WebsiteCards.json")
+        fetch("https://gist.githubusercontent.com/KopyTKG/08dab4b2805b0fcb5e1e8f9929e73a7e/raw/beaac1238106097a907835d62bc208091d9bd649/WebsiteCards.json")
         .then(response => response.json())
         .then(data => setProjects(data.projects))
     }, [])
