@@ -13,7 +13,9 @@
 @media (min-width: 57.5rem) {
     .project-grid {
         width: calc(100% - 4rem);
+        height: max-content;
         display: grid;
+        row-gap: 2rem;
         justify-items: center;
         align-items: start;
         grid-template-columns: repeat(2, 1fr);
@@ -26,5 +28,6 @@
         display: grid;
         width: calc(100% - 10rem);
         grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: max-content;
     }
 }

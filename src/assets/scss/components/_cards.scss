@@ -3,17 +3,15 @@
 .card-body {
     text-decoration: none;
     width: $CardWidth;
-    min-height: $CardHeigth;
-    height: $CardHeigth;
-    max-height: max-content;
+    aspect-ratio: 20/18;
     display: flex;
     flex-direction: column;
     gap: .25rem;
     & .card-head {
-        width: calc(100% - $CardPadding);
-        height: calc(100% - $CardPadding);
-        overflow: hidden;
+        aspect-ratio: 20/18;
         padding: ($CardPadding/2);
+        overflow: hidden;
+        width: calc(100% - $CardPadding);
         background-color: $NoiseColor;
         background: linear-gradient(110deg, #2e2e2e 20%, #4d4d4d 30%, #2e2e2e 40%);
         background-size: 200% 100%;
@@ -133,7 +131,6 @@
     $CardWidth: $CardWidth / 5;
     .card {
         width: max-content;
-        height: max-content;
     }
     .profile {
         width: 60rem;
@@ -164,14 +161,12 @@
 
 @media (min-width: 60rem) {
     .card-body {
-        min-height: $CardHeigth *1.1;
-        height: $CardHeigth * 1.1;
-        max-height: $CardHeigth * 2;
         width: $CardWidth *1.1;
+        aspect-ratio: 16/9;
         & .card-head {
             border-radius: $CardRadius *1.1;
-            width: calc(100% - $CardPadding);
-            min-height: $CardHeigth * 0.8;
+            aspect-ratio: 16/9;
+
             & .card-icon {
                 border-radius: $CardRadius* 0.85;
             }
@@ -194,14 +189,11 @@
 
 @media (min-width: 125rem) {
     .card-body {
-        min-height: $CardHeigth *1.5;
-        height: $CardHeigth * 1.5;
-        max-height: $CardHeigth * 5;
-        width: $CardWidth *1.75;
+        width: $CardWidth *1.3;
         & .card-head {
-            border-radius: $CardRadius *1.5;
+            border-radius: $CardRadius *1.2;
             width: calc(100% - $CardPadding);
-            min-height: $CardHeigth * 1.2;
+
             & .card-icon {
                 border-radius: $CardRadius*1.25;
             }
