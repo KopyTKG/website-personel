@@ -1,6 +1,4 @@
 const ProjectList = ({projects}) => {
-
-
     return(
         <>
             <div className="project-grid">
