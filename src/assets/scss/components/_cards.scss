@@ -11,6 +11,7 @@
         aspect-ratio: 20/18;
         padding: ($CardPadding/2);
         overflow: hidden;
+        width: calc(100% - $CardPadding);
         background-color: $NoiseColor;
         background: linear-gradient(110deg, #2e2e2e 20%, #4d4d4d 30%, #2e2e2e 40%);
         background-size: 200% 100%;
@@ -126,6 +127,8 @@
 
 
 @media (min-width: 41rem) {
+    $CardHeigth: $CardHeigth *2;
+    $CardWidth: $CardWidth / 5;
     .card {
         width: max-content;
     }
@@ -163,6 +166,7 @@
         & .card-head {
             border-radius: $CardRadius *1.1;
             aspect-ratio: 16/9;
+
             & .card-icon {
                 border-radius: $CardRadius* 0.85;
             }
@@ -189,6 +193,7 @@
         & .card-head {
             border-radius: $CardRadius *1.2;
             width: calc(100% - $CardPadding);
+
             & .card-icon {
                 border-radius: $CardRadius*1.25;
             }
