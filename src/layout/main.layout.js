@@ -1,6 +1,6 @@
 import {Suspense, useEffect, useState, useRef, lazy} from "react";
 import DevMod from "../components/float.asset";
-import {Twitter, Github, Discord} from "../assets/@svg/react/solid"
+import {Github, Discord} from "../assets/@svg/react/solid"
 import FallbackCard from "../components/fallback.card";
 
 import MainBG from "../assets/img/background.png"
@@ -13,38 +13,61 @@ const Layout = () => {
     const Modal = useRef();
     const keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
-    const showModal = e => {
+    /**
+     * Show the modal and disable scrolling.
+     *
+     * @param {Event} e - The event that triggered the modal display.
+     */
+    function showModal(e) {
         let modal = Modal.current;
         modal.classList.add("display");
         disableScroll();
     }
 
-    const hideModal = e => {
+    /**
+     * Hide the modal element.
+     *
+     * @param {Event} e - The event object.
+     */
+    function hideModal(e) {
         let modal = e.target;
         modal.classList.remove("display");
         enableScroll();
     }
+    
+    /**
+     * Prevents the default behavior of an event.
+     *
+     * @param {Event} e - The event object.
+     * @return {undefined} This function does not return a value.
+     */
     function preventDefault(e) {
         e.preventDefault();
-      }
+    }
       
-      function preventDefaultForScrollKeys(e) {
+    /**
+     * Prevents the default behavior for specific scroll keys.
+     *
+     * @param {Event} e - The keyboard event.
+     * @return {boolean} Returns false if the default behavior is prevented, otherwise undefined.
+     */
+    function preventDefaultForScrollKeys(e) {
         if (keys[e.keyCode]) {
           preventDefault(e);
           return false;
         }
-      }
+    }
       
-      // modern Chrome requires { passive: false } when adding event
-      var supportsPassive = false;
-      try {
+    // modern Chrome requires { passive: false } when adding event
+    var supportsPassive = false;
+    try {
         window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
           get: function () { supportsPassive = true; } 
         }));
-      } catch(e) {}
+    } catch(e) {}
       
-      var wheelOpt = supportsPassive ? { passive: false } : false;
-      var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+    var wheelOpt = supportsPassive ? { passive: false } : false;
+    var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
       
     // call this to Disable
     function disableScroll() {
@@ -61,6 +84,7 @@ const Layout = () => {
         window.removeEventListener('touchmove', preventDefault, wheelOpt);
         window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
     }
+    
     useEffect(() => {
         fetch("https://raw.githubusercontent.com/KopyTKG/KopyTKG-website/ImageStore/projects.json")
         .then(response => response.json())
@@ -76,7 +100,7 @@ const Layout = () => {
                         About me.
                         </div>
                         <div className="body">
-                        I’m Martin Kopecký, a 21 year old weirdo from Czech republic, interested in Front-end development.
+                        I’m Martin Kopecký, a {new Date().getFullYear() - 2001} year old weirdo from Czech republic, interested in Front-end development.
                         <br/>
                         <br/>
                         I'm a nerd that likes to play video games and build websites.
@@ -85,9 +109,6 @@ const Layout = () => {
                         I’m interested in UI/UX development and creating smart user interface with awesome and rich experience for the user.
                         </div>
                         <div className="svg-profile">
-                            <a href="https://twitter.com/kopy_tkg">
-                                <Twitter/>
-                            </a>
                             <a href="https://github.com/kopytkg">
                                 <Github/>
                             </a>
@@ -109,7 +130,7 @@ const Layout = () => {
                         </div>
                         <div className="description">
                             {"Front-end UI/UX developer"} <br/>
-                            <span className="subtext">FIND MORE <button className="btn btn-success-outline rounded" onClick={e => showModal(e)}> About me</button></span>
+                            <span className="subtext"><button className="btn btn-success-outline rounded" onClick={e => showModal(e)}> About me</button></span>
                         </div>
                     </div>
                 </div>
@@ -136,32 +157,18 @@ const Layout = () => {
                     <ProjectList projects={projects}/>
                 </Suspense>
             </section>
-            <footer className="footer grid gap-1rem">
-                <div className="grid-col-span-3">
-                    <span className="fotter">
-                        created by <a href="https://github.com/kopytkg/" target="_blank" className="btn btn-success-outline rounded" rel="noreferrer">{"<KopyTKG/>"} </a>            
-                    </span>
-                </div>
-                <div className="grid-col-span-3">
-                    <div className="grid grid-col-3 gap-2rem ">
-                        <div>
-                            <a className="btn btn-success-dark" href="https://github.com/kopytkg">Github</a>
-                        </div>
-                        <div>
-                            <a className="btn btn-success-dark" href="https://twitter.com/kopy_tkg">Twitter</a>
-                        </div>
-                        <div>
-                            <a className="btn btn-success-dark" href="https://discord.gg/ZtjNUMHm8C">Discord</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="grid-col-span-3">
-                    <span className="copyright">
-                        <a>
-                        © 
-                        </a> &nbsp;
-                        {new Date(Date.now()).getFullYear()} thekrew.app
-                    </span>
+            <footer className="footer grid">
+                <div className="fotter">
+                    <span>
+                        created by 
+                            <a href="https://github.com/kopytkg/" target="_blank" className="btn btn-success-outline rounded" rel="noreferrer">KopyTKG</a>
+                    </span>    
+                </div> 
+                <div className="copyright">
+                    <a>
+                    © 
+                    </a> &nbsp;
+                    {new Date(Date.now()).getFullYear()} thekrew.app
                 </div>
             </footer> 
             <DevMod/>
