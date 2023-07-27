@@ -1,7 +1,5 @@
 import React,{Suspense} from "react";
-import { NotificationContainer } from "react-notifications";
-import { BrowserRouter, Navigate, Route, Routes, useParams,  } from "react-router-dom";
-import Navbar from "../components/navbar";
+import { BrowserRouter, Navigate, Route, Routes,  } from "react-router-dom";
 import Fallback from "../components/fallback";
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -10,7 +8,6 @@ export default () => {
     return(
         <> 
         <BrowserRouter>
-            <NotificationContainer />
             <Routes>
                 <Route path="/" element={
                     <Suspense fallback={<Fallback />}>
@@ -26,27 +23,11 @@ export default () => {
 }
 
 
-const Redirect = () => {
-    let {any} = useParams();
-    const DevView = React.lazy(() => import("../views/devmode.view"))
-
-    return(
-        <>
-            {localStorage.getItem("dev") === "true" && any === "dev"?
-            <>
-                <Navbar/>
-                <Routes>
-                        <Route path="/" element={
-                            <Suspense fallback={<Fallback />}>
-                                <DevView />
-                            </Suspense>
-                        } />
-                        <Route path=":any/*" element={<Navigate to="/dev" replace={true}/>}/>
-                </Routes>
-            </>
-            :
-            <Navigate to="/" replace={true}/>
-            }
-        </>
-    );
+/**
+ * Generates a function comment for the given function body in a markdown code block with the correct language syntax.
+ *
+ * @return {JSX.Element} - The code block with the function comment.
+ */
+function Redirect() {
+    return(<Navigate to="/" replace={true}/>);
 }
