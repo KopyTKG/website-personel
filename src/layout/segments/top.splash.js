@@ -1,10 +1,11 @@
-import {Github, Discord} from "../../assets/@svg/react/solid"
 import MainBG from "../../assets/img/background.png"
 import BackupBG from "../../assets/img/background-backup.png"
-import {useRef, Suspense} from "react";
+import Modal from "../../components/modal";
+import {Suspense} from "react";
+import {useRef} from "react";
 
 function TopSplash() {
-    const Modal = useRef();
+    const modalRef = useRef();
     const keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
     /**
@@ -13,7 +14,7 @@ function TopSplash() {
      * @param {Event} e - The event that triggered the modal display.
      */
     function showModal(e) {
-        let modal = Modal.current;
+        let modal = modalRef.current;
         modal.classList.add("display");
         disableScroll();
     }
@@ -78,42 +79,19 @@ function TopSplash() {
         window.removeEventListener('touchmove', preventDefault, wheelOpt);
         window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
     }
+
     return(
         <>
-            <div className="modal" ref={Modal} onClick={e => hideModal(e)}>
-                <div className="card profile">
-                    <div className="text">
-                        <div className="title">
-                        About me.
-                        </div>
-                        <div className="body">
-                        I’m Martin Kopecký, but i go by Kopy. I am {new Date().getFullYear() - 2001} year old weirdo from Czech republic, interested in Front-end development.
-                        <br/>
-                        <br/>
-                        I'm a nerd that likes to play video games and build websites.
-                        <br/>
-                        <br/>
-                        I’m interested in UI/UX development and creating smart user interface with awesome and rich experience for the user.
-                        </div>
-                        <div className="svg-profile">
-                            <a href="https://github.com/kopytkg">
-                                <Github/>
-                            </a>
-                            <a href="https://discord.gg/ZtjNUMHm8C">
-                                <Discord/>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="splash">
-                        <div className="mask"/>
-                    </div>
-                </div>
-            </div>
+            <Modal
+                ModalRef={modalRef}
+                hideModal={hideModal}
+                
+            />
             <section>
                 <div className="main-slot">
                     <div className="main-card">
                         <div className="title">
-                            {"Kopy"}
+                            {"<KopyTKG/>"}
                         </div>
                         <div className="description">
                             {"Front-end UI/UX developer"} <br/>
