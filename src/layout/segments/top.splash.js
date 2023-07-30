@@ -15,7 +15,7 @@ function TopSplash() {
      */
     function showModal(e) {
         let modal = modalRef.current;
-        modal.classList.add("display");
+        modal.classList.add("modal-show");
         disableScroll();
     }
 
@@ -25,8 +25,8 @@ function TopSplash() {
      * @param {Event} e - The event object.
      */
     function hideModal(e) {
-        let modal = e.target;
-        modal.classList.remove("display");
+        let modal = document.getElementById("modal");
+        modal.classList.remove("modal-show");
         enableScroll();
     }
     

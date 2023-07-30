@@ -15,12 +15,12 @@
 @import "./components/custom/navbar";
 @import "./components/flex";
 
-// dev mode
-@import "./components/dev";
 
 // components
 @import "./components/default";
 @import "./components/section";
+@import "./components/profile";
+@import "./components/modal";
 @import "./components/slot";
 @import "./components/scrollbar";
 @import "./components/projects";
