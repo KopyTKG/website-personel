@@ -1,12 +1,13 @@
+import {v4 as uuid} from "uuid";
+
 const ProjectList = ({projects}) => {
     return(
-        <>
             <div className="project-grid">
             {
-                projects.map((data, index) => {
+                projects.map((data, key) => {
                     return(<>
-                        <a className="card-body" target="_blank" href={data.url} rel="noreferrer">
-                            <div className="card-head" style={{animationDelay: index*2+"s"}}>
+                        <a className="card-body" target="_blank" href={data.url} rel="noreferrer" key={uuid()}>
+                            <div className="card-head" style={{animationDelay: key*2+"s"}}>
                                 {data.type === "iframe"? <>
                                     <iframe src={data.src} className="card-icon" style={{zIndex: -1}} scrolling="no" loading="lazy" disabled title={data.title}/>    
                                     <div className="card-dummy" />
@@ -18,7 +19,7 @@ const ProjectList = ({projects}) => {
                                 }
                             </div>
                             <div className="card-title">
-                                {(index+1)+")"}&nbsp;&nbsp;{data.title}
+                                {(key+1)+")"}&nbsp;&nbsp;{data.title}
                             </div>
                             <div className="card-desc">
                                 {data.desc}
@@ -31,7 +32,6 @@ const ProjectList = ({projects}) => {
                 })
             }
             </div>
-        </>
     );
 }
 

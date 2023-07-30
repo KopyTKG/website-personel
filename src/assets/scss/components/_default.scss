@@ -12,25 +12,6 @@ body {
     background-blend-mode:color-dodge;  
   }
   
-  .modal {
-    background-color: rgba($color: $SecondaryColor, $alpha: 0.9);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top:0;
-    opacity: 0;
-    z-index: -1;
-    transition: ease-in-out 0.75s;
-  }
-  
-  .display {
-    opacity: 1 !important;
-    z-index: 5;
-  }
-  
 iframe {
   border: none;
   outline: none;
