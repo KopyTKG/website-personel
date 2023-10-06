@@ -1,6 +1,6 @@
-import {Github, Discord} from "../assets/@svg/react/solid"
+import {Github, Discord} from "../@svg/react/solid"
 
-function Modal(props) {
+function Modal(props: any) {
     return (
         <>
             <div id="modal" className="modal" ref={props.ModalRef} onClick={e => props.hideModal(e)}>
