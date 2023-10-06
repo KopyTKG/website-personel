@@ -1,52 +1,24 @@
 {
+  "name": "personal-website",
+  "version": "0.1.2",
   "private": true,
-  "version": "0.1.0",
-  "author": {
-    "name": "KopyTKG"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@heroicons/react": "^1.0.4",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "animejs": "^3.2.1",
-    "bootstrap": "^5.1.3",
-    "dotenv": "^10.0.0",
-    "framer-motion": "^6.2.10",
-    "node-sass-package-importer": "^3.0.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-notifications": "^1.7.3",
-    "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "^5.0.1",
-    "reactstrap": "^9.0.2",
-    "sass": "^1.39.2",
-    "uuidv4": "^6.2.13",
-    "web-vitals": "^2.1.3"
+    "next": "13.5.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "uuid": "^9.0.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "sass": "^1.69.0",
+    "typescript": "^5"
   }
 }
