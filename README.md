@@ -1,36 +1,40 @@
 ## Updates
-* V 0.1.1
+### V 0.1.2
+
+Migration to nextjs framework
+
+### V 0.1.1
 
 Projects added.
 
-* V 0.1.0 
+### V 0.1.0 
 
 UI rework. Part 3 -> profile card added.
 
-* V 0.0.9
+### V 0.0.9
 
 UI rework. Part 2 -> scss added. UI/UX elements added.
 
-* V 0.0.8
+### V 0.0.8
 
 UI rework.
 
-* V 0.0.7
+### V 0.0.7
 
 UI redesign. signpost included.
 
-* V 0.0.6
+### V 0.0.6
 
 title has been changed + icon. Background added a balloon. Changed logo on the site.
 
-* V 0.0.5
+### V 0.0.5
 
 background rework into scss vars. Rednder rework for phones.
 
-* V 0.0.4
+### V 0.0.4
 
 added a main slots and svgs for all platforms. Bootstrap added for responsive styling.
 
-* V 0.0.3
+### V 0.0.3
 
 sky bg reworked. Color gradiant changed from (L to R) to (T to B). Moon added to bg.
