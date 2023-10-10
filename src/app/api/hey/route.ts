@@ -7,11 +7,10 @@ async function GetAuth(header: any) {
     try {
         const jwt = new JWT()
         const secret = await jwt.getPublic()
-        const { payload } = await jose.jwtVerify(auth, secret, {
+        await jose.jwtVerify(auth, secret, {
             issuer: 'urn:thekrew:issuer',
             audience: 'urn:thekrew:audience',
         })
-
         return true 
     } catch (e) {
         return false
@@ -42,12 +41,39 @@ export async function POST(
     }
 }
 
+export async function PUT(
+    req: Request,
+){
+    try{
+        const headers = req.headers
+        const auth = await GetAuth(headers);
+        if(!auth) {
+            return Response.json('Invalid Token')
+        } else {
+            const data = await prisma.heyCount.findMany(
+                {
+                    orderBy: {
+                        createdAt: 'desc'
+                    }
+                }
+            )
+            if (data == null) {
+                return Response.json(0)
+            } 
+            return Response.json(data)                
+        }
+        
+    } catch (e) {
+        console.log(e);
+        return Response.json('Internal Server Error')
+    }
+}
+
 export async function GET(
     req: Request,
 ){
     try{
         const headers = req.headers
-
         const auth = await GetAuth(headers);
         if(!auth) {
             return Response.json('Invalid Token')
@@ -66,11 +92,12 @@ export async function GET(
         }
         
     } catch (e) {
+        console.log(e);
         return Response.json('Internal Server Error')
     }
 }
 
-export async function PUT(
+export async function PATCH(
     req: Request,
     ){
       try{
