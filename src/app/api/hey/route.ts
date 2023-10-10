@@ -2,7 +2,6 @@ import prisma from '../../../../prisma/client'
 import JWT from '@/modules/controllers/jwt.controller'
 import * as jose from 'jose'
 
-
 async function GetAuth(header: any) {
     const auth = String(header.get('authorization')?.split(" ")[1])
     try {
@@ -48,6 +47,7 @@ export async function GET(
 ){
     try{
         const headers = req.headers
+
         const auth = await GetAuth(headers);
         if(!auth) {
             return Response.json('Invalid Token')
