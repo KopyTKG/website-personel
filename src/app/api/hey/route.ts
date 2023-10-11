@@ -28,11 +28,7 @@ export async function POST(
         if(!auth) {
             return Response.json('Invalid Token')
         } else {
-            await prisma.heyCount.create({
-                data: {
-                    count: Number(settings.data),
-                }
-            });
+            await prisma.heyCount.create({data:{}});
             return Response.json("Done")                
         }
         
@@ -41,7 +37,7 @@ export async function POST(
     }
 }
 
-export async function PUT(
+export async function GET(
     req: Request,
 ){
     try{
@@ -69,60 +65,7 @@ export async function PUT(
     }
 }
 
-export async function GET(
-    req: Request,
-){
-    try{
-        const headers = req.headers
-        const auth = await GetAuth(headers);
-        if(!auth) {
-            return Response.json('Invalid Token')
-        } else {
-            const data = await prisma.heyCount.findFirst(
-                {
-                    orderBy: {
-                        createdAt: 'desc'
-                    }
-                }
-            )
-            if (data == null) {
-                return Response.json(0)
-            } 
-            return Response.json(data)                
-        }
-        
-    } catch (e) {
-        console.log(e);
-        return Response.json('Internal Server Error')
-    }
-}
 
-export async function PATCH(
-    req: Request,
-    ){
-      try{
-          const headers = req.headers
-          const settings = await req.json();
-          const auth = await GetAuth(headers);    
-          if(!auth) {
-              return Response.json('Invalid Token')
-          } else {
-              await prisma.heyCount.update({
-                where: {
-                    id: settings.id,
-                },
-                data: {
-                      count: Number(settings.data),
-                      
-                  }
-              });
-              return Response.json(`Row ${settings.id} was updated`)                
-          }
-          
-      } catch (e) {
-          return Response.json('Internal Server Error')
-      }   
-}
 
 export async function DELETE(
     req: Request

@@ -9,7 +9,5 @@ datasource db {
 
 model HeyCount {
   id String @id @default(uuid())
-  count Int @default(0)
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
