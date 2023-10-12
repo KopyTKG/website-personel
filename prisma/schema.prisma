@@ -9,5 +9,6 @@ datasource db {
 
 model HeyCount {
   id String @id @default(uuid())
+  user String
   createdAt DateTime @default(now())
 }
