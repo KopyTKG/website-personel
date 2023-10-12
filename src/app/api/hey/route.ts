@@ -81,12 +81,12 @@ export async function DELETE(
         if(!auth) {
             return Response.json('Invalid Token')
         } else {
-            await prisma.heyCount.delete({
-              where: {
-                  id: settings.id,
-              },
-            });
-            return Response.json(`Row ${settings.id} was deleted`)                
+            if (settings == 'kopy') {
+                await prisma.heyCount.deleteMany({});
+                return Response.json(`Rows deleted by ${settings}`)                
+            } else {
+                return Response.json('Not Found')
+            }
         }
         
     } catch (e) {
