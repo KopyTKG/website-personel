@@ -41,7 +41,6 @@ export async function POST(
     }
 }
 
-
 export async function GET(
     req: Request,
 ){
@@ -69,6 +68,7 @@ export async function GET(
         return Response.json('Internal Server Error')
     }
 }
+
 
 
 export async function DELETE(
