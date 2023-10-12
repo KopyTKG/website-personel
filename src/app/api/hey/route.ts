@@ -28,7 +28,11 @@ export async function POST(
         if(!auth) {
             return Response.json('Invalid Token')
         } else {
-            await prisma.heyCount.create({data:{}});
+            await prisma.heyCount.create({
+                data: {
+                    user: settings,
+                }
+            });
             return Response.json("Done")                
         }
         
@@ -49,7 +53,7 @@ export async function GET(
             const data = await prisma.heyCount.findMany(
                 {
                     orderBy: {
-                        createdAt: 'desc'
+                        createdAt: 'desc',
                     }
                 }
             )
