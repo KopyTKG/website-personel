@@ -60,7 +60,8 @@ export async function POST(
         } else {
             const data = await prisma.messages.create({
                 data: {
-                    user: String(auth.sub),
+                    user: String(auth.nickname),
+                    sub: String(auth.sub),
                     message: settings.message
                 }
             })
