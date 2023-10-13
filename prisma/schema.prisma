@@ -12,3 +12,10 @@ model HeyCount {
   user String
   createdAt DateTime @default(now())
 }
+
+model Messages {
+  id String @id @default(uuid())
+  user String
+  message String
+  createdAt DateTime @default(now())
+}
