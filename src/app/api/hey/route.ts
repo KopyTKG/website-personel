@@ -107,7 +107,6 @@ export async function PATCH(
         } else {
             const data = await prisma.heyCount.findMany(
                 {
-                    take: 15,
                     orderBy: {
                         createdAt: 'desc',
                     }
@@ -120,7 +119,7 @@ export async function PATCH(
             let sql: string[] = [];
             data.forEach((item) => {
                 sql.push(
-                    `INSERT INTO Tracking (user, createdAt) VALUES ("${item.user}", '${item.createdAt}');`
+                    `INSERT INTO Tracking (user, createdAt) VALUES (\"${item.user}\", '${new Date(item.createdAt).toISOString()}');`
                 )
             })
             return Response.json(sql)                
