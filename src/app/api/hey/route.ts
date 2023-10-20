@@ -95,3 +95,39 @@ export async function DELETE(
         return Response.json('Internal Server Error')
     }
 }
+
+export async function PATCH(
+    req: Request
+) {
+    try{
+        const headers = req.headers
+        const auth = await GetAuth(headers);
+        if(!auth) {
+            return Response.json('Invalid Token')
+        } else {
+            const data = await prisma.heyCount.findMany(
+                {
+                    take: 15,
+                    orderBy: {
+                        createdAt: 'desc',
+                    }
+                    
+                }
+            )
+            if (data == null) {
+                return Response.json(0)
+            } 
+            let sql: string[] = [];
+            data.forEach((item) => {
+                sql.push(
+                    `INSERT INTO Tracking (user, createdAt) VALUES ("${item.user}", '${item.createdAt}');`
+                )
+            })
+            return Response.json(sql)                
+        }
+        
+    } catch (e) {
+        console.log(e);
+        return Response.json('Internal Server Error')
+    }
+}
