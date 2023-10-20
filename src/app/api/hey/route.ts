@@ -52,9 +52,11 @@ export async function GET(
         } else {
             const data = await prisma.heyCount.findMany(
                 {
+                    take: 15,
                     orderBy: {
                         createdAt: 'desc',
                     }
+                    
                 }
             )
             if (data == null) {
