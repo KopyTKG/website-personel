@@ -1,11 +1,11 @@
 import Projects from '../modules/projects'
-import TopSplash from '../modules/splash'
+import TopSplash from '@/components/splash'
 
 export default function Home() {
  return (
   <main>
    <TopSplash />
-   <Projects />
+   {/* <Projects /> */}
   </main>
  )
 }

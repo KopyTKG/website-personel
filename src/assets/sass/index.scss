@@ -1,34 +1,5 @@
 @import "./components/variables";
-@import "./components/fonts";
-
-/* Imports */
-@import "./components/mixins";
-@import "./components/custom/animations";
-
-
-@import "./components/grid";
-@import "./components/cards";
-@import "./components/buttons";
-@import "./components/custom/settings";
-@import "./components/custom/header";
-@import "./components/custom/navbar";
-@import "./components/flex";
-
 
 // components
 @import "./components/default";
-@import "./components/section";
-@import "./components/profile";
-@import "./components/modal";
-@import "./components/slot";
 @import "./components/scrollbar";
-@import "./components/projects";
-@import "./components/floater";
-@import "./components/container";
-@import "./components/code";
-@import "./components/splitter";
-
-
-// Fallbacks
-@import "./components/fallbacks/spinner";
-@import "./components/fallbacks/card";
