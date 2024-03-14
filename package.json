@@ -1,32 +1,52 @@
 {
-  "name": "personal-website",
-  "version": "0.2.0",
+  "name": "thekrew",
+  "description": "Thekrew.app website.",
+  "license": "AGPL-3.0-only",
+  "version": "1.0.0",
   "private": true,
   "type": "commonjs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
-    "@prisma/client": "^5.4.2",
-    "jose": "^4.15.3",
-    "next": "13.5.4",
-    "react": "^18",
-    "react-dom": "^18"
-  },
-  "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+    "@heroicons/react": "^2.1.1",
+    "@nextui-org/react": "^2.2.9",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.9",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "eslint-config-next": "^14.1.0",
+    "flag-icons": "^7.1.0",
+    "framer-motion": "^11.0.5",
+    "geist": "^1.2.0",
+    "jose": "^5.2.0",
+    "lucide-react": "^0.349.0",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "prisma": "^5.4.2",
-    "sass": "^1.69.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5",
-    "uuid": "^9.0.1"
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.19",
+    "autoprefixer": "^10.4.16",
+    "eslint": "8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "postcss": "^8.4.35",
+    "prettier": "^3.2.4",
+    "prisma": "^5.7.0",
+    "sass": "^1.71.1",
+    "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }

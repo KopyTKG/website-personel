@@ -1,13 +1,10 @@
-import Footer from "../modules/footer";
-import Projects from "../modules/projects";
-import TopSplash from "../modules/splash";
-
+import Header from '@/components/sections/splash'
+import Projects from '@/components/sections/projects'
 export default function Home() {
-  return (
-    <main>
-      <TopSplash/>
-      <Projects />
-      <Footer />
-    </main>
-  )
+ return (
+  <main>
+   <Header />
+   <Projects />
+  </main>
+ )
 }
