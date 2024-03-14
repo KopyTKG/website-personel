@@ -26,7 +26,7 @@ function TopSplash() {
    <Modal ModalRef={modalRef} hideModal={hideModal} />
    <section className="h-screen w-svw">
     <div className="absolute top-0 left-0 z-10 flex h-full w-full items-center">
-     <div className=" bg-zinc-800/75 w-svw h-[30rem] flex items-center flex-col justify-center">
+     <div className=" bg-stone-950/75 w-svw h-[30rem] flex items-center flex-col justify-center">
       <div className="text-lime-400 font-semibold text-[4rem] lg:text-[5rem] xl:text-[6rem]">
        {'<KopyTKG/>'}
       </div>

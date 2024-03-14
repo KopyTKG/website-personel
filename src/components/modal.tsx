@@ -11,14 +11,14 @@ function Modal(props: { ModalRef: React.RefObject<HTMLDivElement>; hideModal: ()
    <div
     className="fixed top-0 left-0 bg-black/50 w-svw h-screen z-30 flex justify-center items-center hide"
     ref={props.ModalRef}>
-    <Card className="xl:w-2/4 lg:w-3/4 h-4/6 md:h-max  lg:h-4/6 rounded-3xl py-5 px-1 md:p-1 bg-zinc-900 text-lime-500 grid md:grid-cols-2 overflow-hidden border-none">
+    <Card className="xl:w-3/5 2xl:w-2/5 lg:w-3/4 h-max rounded-3xl py-5 px-1 md:p-1 bg-zinc-900 text-lime-500 grid md:grid-cols-2 overflow-hidden border-none">
      <Button
       variant="outline"
-      className="text-red-500 bg-transparent outline rounded-full outline-red-500 border-none hover:bg-transparent hover:outline-red-400 hover:text-red-400 w-20 h-max absolute right-5 lg:right-[12.5%] xl:right-1/4"
+      className="text-red-500 text-xl font-bold bg-transparent outline rounded-full outline-red-500 border-none hover:bg-transparent hover:outline-red-400 hover:text-red-400 w-20 h-max absolute right-5 lg:right-[12.5%] xl:right-[20%] 2xl:right-[30%]"
       onClick={() => props.hideModal()}>
       Close
      </Button>
-     <div className="flex flex-col gap-4 p-4 justify-between md:justify-start">
+     <div className="flex flex-col gap-4 p-4 justify-between">
       <div className="text-4xl font-bold text-lime-400">About me.</div>
       <p className="text-justify text-xl">
        I&apos;m Martin Kopecký, but i go by Kopy. I am {new Date().getFullYear() - 2001} year old
@@ -49,7 +49,7 @@ function Modal(props: { ModalRef: React.RefObject<HTMLDivElement>; hideModal: ()
        alt="Splash image"
        width={2000}
        height={2000}
-       className="h-full w-full object-cover"
+       className="h-[40rem] w-full object-cover"
       />
      </div>
     </Card>
