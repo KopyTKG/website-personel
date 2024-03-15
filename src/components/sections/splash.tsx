@@ -49,7 +49,7 @@ function TopSplash() {
      width={1920}
      height={1080}
      alt="mainbg"
-     className="absolute top-0 left-0 z-0 min-h-screen min-w-full object-cover"
+     className="absolute top-0 left-0 z-0 h-screen min-w-full object-cover"
      priority
     />
    </section>

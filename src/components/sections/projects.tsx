@@ -33,11 +33,13 @@ export default function ProjectSection() {
         <h2 className="text-3xl font-bold">{item.title}</h2>
         <h2 className="text-lg">{item.description}</h2>
        </div>
-       <div className="lg:col-start-2 lg:col-span-2 w-8/12">{item.content}</div>
+       <div className="lg:col-start-2 lg:col-span-2 lg:w-8/12 w-full">{item.content}</div>
       </>
      ) : (
       <>
-       <div className="lg:col-span-2 w-8/12 row-start-2 lg:row-start-1">{item.content}</div>
+       <div className="lg:col-span-2 lg:w-8/12 row-start-2 lg:row-start-1 w-full">
+        {item.content}
+       </div>
        <div className="text-white">
         <h2 className="text-3xl font-bold">{item.title}</h2>
         <h2 className="text-lg">{item.description}</h2>
