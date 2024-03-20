@@ -31,7 +31,7 @@ function Modal(props: { ModalRef: React.RefObject<HTMLDivElement>; hideModal: ()
        I&apos;m interested in UI/UX development and creating smart user interface with awesome and
        rich experience for the user.
       </p>
-      <div className="flex gap-4">
+      <div className="flex gap-10 justify-center">
        <a href="https://github.com/kopytkg" target="_blank" rel="noreferrer">
         <Github width={50} className="hover:fill-lime-300 fill-zinc-600 ease-in-out duration-200" />
        </a>
@@ -118,3 +118,5 @@ function Discord(props: any) {
   }),
  )
 }
+
+export { Discord, Github }
