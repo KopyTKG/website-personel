@@ -7,8 +7,10 @@ export default function Docs() {
      <h1 className="text-xl font-bold text-zinc-500">KI/GUI</h1>
     </div>
     <p className="text-lg">Documentation for subject KI/GUI in UJEP.</p>
-    <a href="/docs/gui" className="text-lg text-blue-400 hover:cursor-pointer hover:text-blue-500">
-     read more...
+    <a
+     href="/docs/gui"
+     className="text-xl text-blue-400 hover:cursor-pointer hover:text-blue-500 text-end">
+     Read more
     </a>
    </div>
   </div>

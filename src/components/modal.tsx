@@ -11,10 +11,10 @@ function Modal(props: { ModalRef: React.RefObject<HTMLDivElement>; hideModal: ()
    <div
     className="fixed top-0 left-0 bg-black/50 w-svw h-screen z-30 flex justify-center items-center hide"
     ref={props.ModalRef}>
-    <Card className="xl:w-3/5 2xl:w-2/5 lg:w-3/4 h-max rounded-3xl py-5 px-1 md:p-1 bg-zinc-900 text-lime-500 grid md:grid-cols-2 overflow-hidden border-none">
+    <Card className="xl:w-3/5 2xl:w-2/5 lg:w-3/4 max-h-max rounded-3xl py-5 px-1 md:p-1 bg-zinc-900 text-lime-500 grid md:grid-cols-2 overflow-hidden border-none">
      <Button
       variant="outline"
-      className="text-red-500 text-xl font-bold bg-transparent outline rounded-full outline-red-500 border-none hover:bg-transparent hover:outline-red-400 hover:text-red-400 w-20 h-max absolute right-5 lg:right-[12.5%] xl:right-[20%] 2xl:right-[30%]"
+      className="text-red-500 text-xl font-bold bg-transparent outline rounded-full outline-red-500 border-none hover:bg-transparent hover:outline-red-400 hover:text-red-400 w-20 max-h-max absolute right-5 lg:right-[12.5%] xl:right-[20%] 2xl:right-[30%]"
       onClick={() => props.hideModal()}>
       Close
      </Button>
@@ -49,7 +49,7 @@ function Modal(props: { ModalRef: React.RefObject<HTMLDivElement>; hideModal: ()
        alt="Splash image"
        width={2000}
        height={2000}
-       className="h-[40rem] w-full object-cover"
+       className="max-h-[40rem] h-auto w-full object-cover rounded-r-3xl"
       />
      </div>
     </Card>
