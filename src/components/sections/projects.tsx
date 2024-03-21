@@ -12,7 +12,22 @@ const content = [
      src="/projects/moviedb.png"
      width={1920}
      height={1080}
-     className="object-contain w-full"
+     className="object-contain w-full border-1 border-white border"
+     alt="linear board demo"
+    />
+   </a>
+  ),
+ },
+ {
+  title: 'Docs',
+  description: 'Documentation endpoint for my projects. Including uni project for KI/GUI.',
+  content: (
+   <a href="https://thekrew.app/docs" target="_blank" rel="noreferrer">
+    <Image
+     src="/projects/docs.png"
+     width={1920}
+     height={1080}
+     className="object-contain w-full border-1 border-white border"
      alt="linear board demo"
     />
    </a>

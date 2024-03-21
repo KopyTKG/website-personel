@@ -26,7 +26,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
      </div>
     </div>
    </nav>
-   <div className="text-white max-w-6xl mx-auto px-10 text-justify">{children}</div>
+   <div className="text-white max-w-6xl mx-auto px-10 text-justify pt-5">{children}</div>
   </div>
  )
 }
