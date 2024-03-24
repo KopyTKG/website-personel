@@ -5,7 +5,6 @@ import Chapter4 from '@/components/sections/gui/chapter4'
 import Chapter5 from '@/components/sections/gui/chapter5'
 import TechKIGUI from '@/components/sections/techstack.kigui'
 import { Github } from 'lucide-react'
-import React from 'react'
 
 export default function KI_GUI() {
  return (
@@ -43,20 +42,6 @@ export default function KI_GUI() {
  )
 }
 
-function H({ children }: { children: React.ReactNode }) {
- return <h4 className="text-lg">{children}</h4>
-}
-
-function Chapter({ children }: { children: React.ReactNode }) {
- return <h4 className="text-3xl font-bold">{children}</h4>
-}
-
-function HL({ children }: { children: React.ReactNode }) {
- return <span className="text-green-400 font-bold">{children}</span>
-}
-
 function Line() {
  return <div className="border-b border-slate-500/35 my-2" />
 }
-
-export { H, Chapter, HL }

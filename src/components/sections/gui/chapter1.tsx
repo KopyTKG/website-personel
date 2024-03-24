@@ -1,4 +1,4 @@
-import { Chapter, H, HL } from '@/app/docs/gui/page'
+import { Chapter, H, HL } from '@/components/ui/textFormat'
 import { Code } from '@/components/ui/code'
 
 export default function Chapter1() {
