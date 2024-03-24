@@ -43,18 +43,20 @@ export default function KI_GUI() {
  )
 }
 
-export function H({ children }: { children: React.ReactNode }) {
+function H({ children }: { children: React.ReactNode }) {
  return <h4 className="text-lg">{children}</h4>
 }
 
-export function Chapter({ children }: { children: React.ReactNode }) {
+function Chapter({ children }: { children: React.ReactNode }) {
  return <h4 className="text-3xl font-bold">{children}</h4>
 }
 
-export function HL({ children }: { children: React.ReactNode }) {
+function HL({ children }: { children: React.ReactNode }) {
  return <span className="text-green-400 font-bold">{children}</span>
 }
 
 function Line() {
  return <div className="border-b border-slate-500/35 my-2" />
 }
+
+export { H, Chapter, HL }
