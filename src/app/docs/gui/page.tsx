@@ -633,7 +633,190 @@ export default function Home() {
       </SyntaxHighlighter>
      </Code>
     </div>
-    <Chapter>5. API</Chapter>
+   </div>
+   <Line />
+   <Chapter>5. API</Chapter>
+   <div className="flex flex-col gap-8 ml-5 mt-2">
+    <div>
+     <H>
+      To create API routes we need to create folder <code>src/api</code> in which we create a folder
+      with the name of the api route that we want. For this example we are going to create a folder
+      named <code>src/api/url</code>. In this folder we need to create a file <code>route.ts</code>{' '}
+      with basic <HL>GET, POST</HL> methods. Such as this:
+     </H>
+     <Code
+      text={`export async function GET(req: Request) {
+  return new Response("Hello, Next.js! GET");
+}
+export async function POST(req: Request) {
+  return new Response("Hello, Next.js! POST");
+}`}>
+      <SyntaxHighlighter language="typescript" style={irBlack}>
+       {`export async function GET(req: Request) {
+  return new Response("Hello, Next.js! GET");
+}
+export async function POST(req: Request) {
+  return new Response("Hello, Next.js! POST");
+}`}
+      </SyntaxHighlighter>
+     </Code>
+    </div>
+    <div>
+     <H>
+      Now we have backend and frontend, but they don&apos;t know about each other. To make them
+      communicate we need to edit index page <code>src/app/page.tsx</code> by replacing{' '}
+      <code>{`alert("Valid URL");`}</code> with this:
+     </H>
+     <Code
+      text={`// post request header
+const headers = {
+  method: 'POST',
+  headers: {
+   accept: 'application/json',
+  },
+  body: JSON.stringify(url),
+}
+// Fetch call with headers
+const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'/api/url', headers)
+// Check if response code isn't 200
+if (!response.ok) {
+  alert('Failed to fetch data')
+  return
+ }
+// json data from api
+const data = await response.json()
+alert(process.env.NEXT_PUBLIC_BASE_URL + "/" + data.id)`}>
+      <SyntaxHighlighter language="typescript" style={irBlack}>
+       {`// post request header
+const headers = {
+  method: 'POST',
+  headers: {
+   accept: 'application/json',
+  },
+  body: JSON.stringify(url),
+}
+// Fetch call with headers
+const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'/api/url', headers)
+// Check if response code isn't 200
+if (!response.ok) {
+  alert('Failed to fetch data')
+  return
+ }
+// json data from api
+const data = await response.json()
+alert(process.env.NEXT_PUBLIC_BASE_URL + "/" + data.id)`}
+      </SyntaxHighlighter>
+     </Code>
+     <H>
+      So the whole file <code>src/app/page.tsx</code> should look like this:
+     </H>
+     <Code
+      text={`'use client'
+import {useRef} from 'react';
+export default function Home() {
+  const inputRef = useRef<HTMLInputElement>(null);
+  async function Submit() {
+    //regex pattern
+    const _pattern = "^(https?:\\\\/\\\\/)[\\\\da-z\\\\.-]+\\\\.[a-z]{2,}([\\\\/\\\\w .-]*)(:[\\\\w]+)?(\\\\?[\\\\w=&]+)?(#\\\\w+)?\\\\/?$";
+    //initializing regex
+    const _regex = new RegExp(_pattern);
+
+    // get value of input field
+    const url = inputRef.current?.value || null
+    if (!url) return;
+
+    if (!_regex.test(url)) {
+      alert("Invalid URL");
+      return;
+    } else {
+      // post request header
+      const headers = {
+        method: 'POST',
+        headers: {
+         accept: 'application/json',
+        },
+        body: JSON.stringify(url),
+      }
+      // Fetch call with headers
+      const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'/api/url', headers)
+      // Check if response code isn't 200
+      if (!response.ok) {
+        alert('Failed to fetch data')
+        return
+       }
+      // json data from api
+      const data = await response.json()
+      alert(process.env.NEXT_PUBLIC_BASE_URL + "/" + data.id)
+      return;
+    }
+  }
+  return (
+    <main className="w-full h-[95vh] flex justify-center items-center">
+      <div className=" flex flex-col items-center w-1/4 h-fit outline-1 outline outline-gray-500 bg-gray-900 rounded-lg gap-10 py-5 px-3">
+        <h1 className="text-3xl text-white font-bold" > ShortURL </h1>
+        <input ref={inputRef} placeholder="Enter URL to shorten" className="w-full h-10 px-3 rounded-lg bg-slate-600 text-white" />
+        <button className="text-xl bg-blue-400 rounded-xl px-4 py-2 text-black hover:bg-blue-700 hover:text-white ease-in-out duration-300" onClick={() => Submit()}>
+          Create URL
+        </button>
+      </div>
+    </main>
+  );
+}`}>
+      <SyntaxHighlighter language="typescript" style={irBlack}>
+       {`'use client'
+import {useRef} from 'react';
+export default function Home() {
+  const inputRef = useRef<HTMLInputElement>(null);
+  async function Submit() {
+    //regex pattern
+    const _pattern = "^(https?:\\\\/\\\\/)[\\\\da-z\\\\.-]+\\\\.[a-z]{2,}([\\\\/\\\\w .-]*)(:[\\\\w]+)?(\\\\?[\\\\w=&]+)?(#\\\\w+)?\\\\/?$";
+    //initializing regex
+    const _regex = new RegExp(_pattern);
+
+    // get value of input field
+    const url = inputRef.current?.value || null
+    if (!url) return;
+
+    if (!_regex.test(url)) {
+      alert("Invalid URL");
+      return;
+    } else {
+      // post request header
+      const headers = {
+        method: 'POST',
+        headers: {
+         accept: 'application/json',
+        },
+        body: JSON.stringify(url),
+      }
+      // Fetch call with headers
+      const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'/api/url', headers)
+      // Check if response code isn't 200
+      if (!response.ok) {
+        alert('Failed to fetch data')
+        return
+       }
+      // json data from api
+      const data = await response.json()
+      alert(process.env.NEXT_PUBLIC_BASE_URL + "/" + data.id)
+      return;
+    }
+  }
+  return (
+    <main className="w-full h-[95vh] flex justify-center items-center">
+      <div className=" flex flex-col items-center w-1/4 h-fit outline-1 outline outline-gray-500 bg-gray-900 rounded-lg gap-10 py-5 px-3">
+        <h1 className="text-3xl text-white font-bold" > ShortURL </h1>
+        <input ref={inputRef} placeholder="Enter URL to shorten" className="w-full h-10 px-3 rounded-lg bg-slate-600 text-white" />
+        <button className="text-xl bg-blue-400 rounded-xl px-4 py-2 text-black hover:bg-blue-700 hover:text-white ease-in-out duration-300" onClick={() => Submit()}>
+          Create URL
+        </button>
+      </div>
+    </main>
+  );
+}`}
+      </SyntaxHighlighter>
+     </Code>
+    </div>
    </div>
   </>
  )
