@@ -13,7 +13,7 @@ export default function KI_GUI() {
    <div className="flex justify-between">
     <h1 className="text-5xl font-bold">Next.js</h1>{' '}
     <a
-     href="https://github.com/kopytkg/shorturl"
+     href="https://github.com/KopyTKG/short-url_demo"
      target="_blank"
      rel="noreferrer"
      className="flex items-center text-lg font-bold hover:bg-white/50 ease-in-out duration-200 rounded-lg p-[.25rem]">
