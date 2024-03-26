@@ -204,10 +204,10 @@ return (
         const _regex = new RegExp(_pattern);
     
         // get value of input field
-        const url = inputRef.current?.value || null
-        if (!url) return;
+        const urlInput = inputRef.current?.value || null
+        if (!urlInput) return;
     
-        if (!_regex.test(url)) {
+        if (!_regex.test(urlInput)) {
           alert("Invalid URL");
           return;
         } else {
@@ -239,10 +239,10 @@ async function Submit() {
   const _regex = new RegExp(_pattern);
 
   // get value of input field
-  const url = inputRef.current?.value || null
-  if (!url) return;
+  const urlInput = inputRef.current?.value || null
+  if (!urlInput) return;
 
-  if (!_regex.test(url)) {
+  if (!_regex.test(urlInput)) {
     alert("Invalid URL");
     return;
   } else {

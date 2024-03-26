@@ -3,6 +3,7 @@ import Chapter2 from '@/components/sections/gui/chapter2'
 import Chapter3 from '@/components/sections/gui/chapter3'
 import Chapter4 from '@/components/sections/gui/chapter4'
 import Chapter5 from '@/components/sections/gui/chapter5'
+import Chapter6 from '@/components/sections/gui/chapter6'
 import TechKIGUI from '@/components/sections/techstack.kigui'
 import { Github } from 'lucide-react'
 
@@ -38,6 +39,8 @@ export default function KI_GUI() {
    <Chapter4 />
    <Line />
    <Chapter5 />
+   <Line />
+   <Chapter6 />
   </>
  )
 }

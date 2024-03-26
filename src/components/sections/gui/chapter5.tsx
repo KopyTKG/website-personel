@@ -46,7 +46,7 @@ method: 'POST',
 headers: {
  accept: 'application/json',
 },
-body: JSON.stringify(url),
+body: JSON.stringify({url: urlInput}),
 }
 // Fetch call with headers
 const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'/api/url', headers)
@@ -65,7 +65,7 @@ method: 'POST',
 headers: {
  accept: 'application/json',
 },
-body: JSON.stringify(url),
+body: JSON.stringify({url: urlInput}),
 }
 // Fetch call with headers
 const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'/api/url', headers)
@@ -94,10 +94,10 @@ async function Submit() {
   const _regex = new RegExp(_pattern);
 
   // get value of input field
-  const url = inputRef.current?.value || null
-  if (!url) return;
+  const urlInput = inputRef.current?.value || null
+  if (!urlInput) return;
 
-  if (!_regex.test(url)) {
+  if (!_regex.test(urlInput)) {
     alert("Invalid URL");
     return;
   } else {
@@ -107,7 +107,7 @@ async function Submit() {
       headers: {
        accept: 'application/json',
       },
-      body: JSON.stringify(url),
+      body: JSON.stringify({url: urlInput}),
     }
     // Fetch call with headers
     const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'/api/url', headers)
@@ -146,10 +146,10 @@ async function Submit() {
   const _regex = new RegExp(_pattern);
 
   // get value of input field
-  const url = inputRef.current?.value || null
-  if (!url) return;
+  const urlInput = inputRef.current?.value || null
+  if (!urlInput) return;
 
-  if (!_regex.test(url)) {
+  if (!_regex.test(urlInput)) {
     alert("Invalid URL");
     return;
   } else {
@@ -159,7 +159,7 @@ async function Submit() {
       headers: {
        accept: 'application/json',
       },
-      body: JSON.stringify(url),
+      body: JSON.stringify({url: urlInput}),
     }
     // Fetch call with headers
     const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL+'/api/url', headers)
@@ -196,15 +196,15 @@ return (
      </H>
      <Code
       text={`function generateId() {
-const min = 1;
-const max = 1099511637775;
-return Math.floor(Math.random() * (max - min + 1)) + min;           
+  const min = 1;
+  const max = 1099511637775;
+  return Math.floor(Math.random() * (max - min + 1)) + min;           
 }`}>
       <SyntaxHighlighter language="typescript" style={irBlack}>
        {`function generateId() {
-const min = 1;
-const max = 1099511637775;
-return Math.floor(Math.random() * (max - min + 1)) + min;           
+  const min = 1;
+  const max = 1099511637775;
+  return Math.floor(Math.random() * (max - min + 1)) + min;           
 }`}
       </SyntaxHighlighter>
      </Code>
@@ -216,45 +216,45 @@ return Math.floor(Math.random() * (max - min + 1)) + min;
      </H>
      <Code
       text={`function generateId() {
-const min = 1;
-const max = 1099511637775;
-return Math.floor(Math.random() * (max - min + 1)) + min;           
+  const min = 1;
+  const max = 1099511637775;
+  return Math.floor(Math.random() * (max - min + 1)) + min;           
 }
 
 export async function GET(req: Request) {
-return new Response("Hello, Next.js! GET");
+  return new Response("Hello, Next.js! GET");
 }
 
 export async function POST(req: Request) {
-try {
-  const data = await req.json()
-  const { url } = data
-  let id = generateId().toString(16)  
-  return new Response(JSON.stringify({id: id}), { status: 200 })
-} catch (error) {
-  return new Response('Error', { status: 500 })
-}
+  try {
+    const data = await req.json()
+    const { url } = data
+    let id = generateId().toString(16)  
+    return new Response(JSON.stringify({id: id}), { status: 200 })
+  } catch (error) {
+    return new Response('Error', { status: 500 })
+  }
 }`}>
       <SyntaxHighlighter language="typescript" style={irBlack}>
        {`function generateId() {
-const min = 1;
-const max = 1099511637775;
-return Math.floor(Math.random() * (max - min + 1)) + min;           
+  const min = 1;
+  const max = 1099511637775;
+  return Math.floor(Math.random() * (max - min + 1)) + min;           
 }
 
 export async function GET(req: Request) {
-return new Response("Hello, Next.js! GET");
+  return new Response("Hello, Next.js! GET");
 }
 
 export async function POST(req: Request) {
-try {
-  const data = await req.json()
-  const { url } = data
-  let id = generateId().toString(16)  
-  return new Response(JSON.stringify({id: id}), { status: 200 })
-} catch (error) {
-  return new Response('Error', { status: 500 })
-}
+  try {
+    const data = await req.json()
+    const { url } = data
+    let id = generateId().toString(16)  
+    return new Response(JSON.stringify({id: id}), { status: 200 })
+  } catch (error) {
+    return new Response('Error', { status: 500 })
+  }
 }`}
       </SyntaxHighlighter>
      </Code>
@@ -269,51 +269,53 @@ try {
       text={`import RedisLib from '@/lib/redis'
 
 function generateId() {
-const min = 1;
-const max = 1099511637775;
-return Math.floor(Math.random() * (max - min + 1)) + min;           
+  const min = 1;
+  const max = 1099511637775;
+  return Math.floor(Math.random() * (max - min + 1)) + min;           
 }
 
 export async function GET(req: Request) {
-return new Response("Hello, Next.js! GET");
+  return new Response("Hello, Next.js! GET");
 }
+
 export async function POST(req: Request) {
-try {
-  const data = await req.json()
-  const { url } = data
+  try {
+    const data = await req.json()
+    const { url } = data
 
-  const redis = RedisLib.getInstance().getClient();
+    const redis = RedisLib.getInstance().getClient();
 
-  let id = generateId().toString(16)  
-  return new Response(JSON.stringify({id: id}), { status: 200 })
-} catch (error) {
-  return new Response('Error', { status: 500 })
-}
+    let id = generateId().toString(16)  
+    return new Response(JSON.stringify({id: id}), { status: 200 })
+  } catch (error) {
+    return new Response('Error', { status: 500 })
+  }
 }`}>
       <SyntaxHighlighter language="typescript" style={irBlack}>
        {`import RedisLib from '@/lib/redis'
 
 function generateId() {
-const min = 1;
-const max = 1099511637775;
-return Math.floor(Math.random() * (max - min + 1)) + min;           
+  const min = 1;
+  const max = 1099511637775;
+  return Math.floor(Math.random() * (max - min + 1)) + min;           
 }
 
 export async function GET(req: Request) {
-return new Response("Hello, Next.js! GET");
+  return new Response("Hello, Next.js! GET");
 }
+
 export async function POST(req: Request) {
-try {
-  const data = await req.json()
-  const { url } = data
+  try {
+    const data = await req.json()
+    const { url } = data
 
-  const redis = RedisLib.getInstance().getClient();
+    const redis = RedisLib.getInstance().getClient();
 
-  let id = generateId().toString(16)  
-  return new Response(JSON.stringify({id: id}), { status: 200 })
-} catch (error) {
-  return new Response('Error', { status: 500 })
-}
+    let id = generateId().toString(16)  
+    return new Response(JSON.stringify({id: id}), { status: 200 })
+  } catch (error) {
+    return new Response('Error', { status: 500 })
+  }
 }`}
       </SyntaxHighlighter>
      </Code>
@@ -338,27 +340,27 @@ return new Response("Hello, Next.js! GET");
 }
 
 export async function POST(req: Request) {
-try {
-  const data = await req.json()
-  const { url } = data
-  
-  const redis = RedisLib.getInstance().getClient();
-  let id = await redis.get(url);
-  if (id) {
-      return new Response(JSON.stringify({id: id}), { status: 200 })
-  } else {
+  try {
+    const data = await req.json()
+    const { url } = data
 
-    let id = generateId().toString(16)
-  
-    const time = 60*60*4;
-    await redis.set(id, url, 'EX', time)
-    await redis.set(url, id, 'EX', time)
+    const redis = RedisLib.getInstance().getClient();
+    let id = await redis.get(url);
+    if (id) {
+        return new Response(JSON.stringify({id: id}), { status: 200 })
+    } else {
+
+      let id = generateId().toString(16)
     
-    return new Response(JSON.stringify({id: id}), { status: 200 })
+      const time = 60*60*4;
+      await redis.set(id, url, 'EX', time)
+      await redis.set(url, id, 'EX', time)
+
+      return new Response(JSON.stringify({id: id}), { status: 200 })
+    }
+  } catch (error) {
+      return new Response('Error', { status: 500 })
   }
-} catch (error) {
-    return new Response('Error', { status: 500 })
-}
 }`}>
       <SyntaxHighlighter language="typescript" style={irBlack}>
        {`import RedisLib from '@/lib/redis'
@@ -374,27 +376,27 @@ return new Response("Hello, Next.js! GET");
 }
 
 export async function POST(req: Request) {
-try {
-  const data = await req.json()
-  const { url } = data
-  
-  const redis = RedisLib.getInstance().getClient();
-  let id = await redis.get(url);
-  if (id) {
-      return new Response(JSON.stringify({id: id}), { status: 200 })
-  } else {
+  try {
+    const data = await req.json()
+    const { url } = data
 
-    let id = generateId().toString(16)
-  
-    const time = 60*60*4;
-    await redis.set(id, url, 'EX', time)
-    await redis.set(url, id, 'EX', time)
+    const redis = RedisLib.getInstance().getClient();
+    let id = await redis.get(url);
+    if (id) {
+        return new Response(JSON.stringify({id: id}), { status: 200 })
+    } else {
+
+      let id = generateId().toString(16)
     
-    return new Response(JSON.stringify({id: id}), { status: 200 })
+      const time = 60*60*4;
+      await redis.set(id, url, 'EX', time)
+      await redis.set(url, id, 'EX', time)
+
+      return new Response(JSON.stringify({id: id}), { status: 200 })
+    }
+  } catch (error) {
+      return new Response('Error', { status: 500 })
   }
-} catch (error) {
-    return new Response('Error', { status: 500 })
-}
 }`}
       </SyntaxHighlighter>
      </Code>
