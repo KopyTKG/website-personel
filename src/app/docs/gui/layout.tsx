@@ -50,7 +50,9 @@ export default function GuiLayout({ children }: { children: React.ReactNode }) {
   <div className="min-h-screen">
    <div className="grid grid-cols-1 lg:grid-cols-[75%_25%] 2xl:grid-cols-[25%_50%_25%] absolute h-svh w-svw top-14 left-0">
     <div className="hidden 2xl:block" />
-    <div className="text-white max-w-full mx-auto px-10 text-justify pt-5 pb-5">{children}</div>
+    <div className="text-white max-w-full mx-auto px-10 text-justify pt-5 pb-5 z-40">
+     {children}
+    </div>
     <div className="hidden lg:block"></div>
    </div>
    <div className="grid grid-cols-1 lg:grid-cols-[75%_25%] 2xl:grid-cols-[25%_50%_25%] fixed  h-svh w-svw top-14 left-0">
