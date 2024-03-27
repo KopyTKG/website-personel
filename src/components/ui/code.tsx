@@ -48,7 +48,7 @@ const Code = React.forwardRef<HTMLButtonElement, ButtonProps>(
        <span>
         <ClipboardIcon
          width={20}
-         className="stroke-stone-300 font-bold bg-transparent fill-transparent stroke-2 group-hover:stroke-stone-700"
+         className="stroke-stone-300 -z-1 font-bold bg-transparent fill-transparent stroke-2 group-hover:stroke-stone-700"
         />
        </span>
       </CopyToClipboard>

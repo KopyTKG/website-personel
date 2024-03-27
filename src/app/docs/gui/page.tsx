@@ -30,17 +30,17 @@ export default function KI_GUI() {
    <Line />
    <TechKIGUI />
    <Line />
-   <Chapter1 />
+   <Chapter1 id="chapter1" />
    <Line />
-   <Chapter2 />
+   <Chapter2 id="chapter2" />
    <Line />
-   <Chapter3 />
+   <Chapter3 id="chapter3" />
    <Line />
-   <Chapter4 />
+   <Chapter4 id="chapter4" />
    <Line />
-   <Chapter5 />
+   <Chapter5 id="chapter5" />
    <Line />
-   <Chapter6 />
+   <Chapter6 id="chapter6" />
   </>
  )
 }

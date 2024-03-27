@@ -3,10 +3,10 @@ import { Code } from '@/components/ui/code'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { irBlack } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-export default function Chapter3() {
+export default function Chapter3({ id }: { id?: string }) {
  return (
   <>
-   <Chapter>3. Basic Configuration</Chapter>
+   <Chapter id={id}>3. Basic Configuration</Chapter>
    <div className="flex flex-col gap-8 ml-5 mt-2">
     <div>
      <H>
@@ -38,13 +38,13 @@ export default function Chapter3() {
      <H>and at last changing body tag className from Inter </H>
      <div className="ml-8 mb-5">
       <Code>
-       <SyntaxHighlighter language="typescript" style={irBlack}>
+       <SyntaxHighlighter language="htmlbars" style={irBlack}>
         {`<body className={Inter.className}>{children}</body>`}
        </SyntaxHighlighter>
       </Code>
       <H>to GeistSans to apply font to whole document</H>
       <Code text="<body className={GeistSans.className}>{children}</body>">
-       <SyntaxHighlighter language="typescript" style={irBlack}>
+       <SyntaxHighlighter language="htmlbars" style={irBlack}>
         {`<body className={GeistSans.className}>{children}</body>`}
        </SyntaxHighlighter>
       </Code>

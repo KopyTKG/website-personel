@@ -3,11 +3,11 @@ import { Code } from '@/components/ui/code'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { irBlack } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-export default function Chapter5() {
+export default function Chapter5({ id }: { id?: string }) {
  return (
   <>
    {' '}
-   <Chapter>5. Generating ID for url</Chapter>
+   <Chapter id={id}>5. Generating ID for url</Chapter>
    <div className="flex flex-col gap-8 ml-5 mt-2">
     <div>
      <H>
@@ -323,8 +323,8 @@ export async function POST(req: Request) {
     <div>
      <H>
       To tie it all together first we need to check if the url already exists in redis cache. If it
-      does we need to return it, else we need to create an id for it and save it into redis for 4h.
-      After that we are going to return that id. Implementation for this part is bellow:
+      does we need to return it, otherwise we need to create an id for it and save it into redis for
+      4h. After that we are going to return that id. Implementation for this part is below:
      </H>
      <Code
       text={`import RedisLib from '@/lib/redis'

@@ -5,15 +5,15 @@ import { Code } from '@/components/ui/code'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { irBlack } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-export default function Chapter6() {
+export default function Chapter6({ id }: { id?: string }) {
  return (
   <>
-   <Chapter>6. Dynamic path for lookup and lookup API </Chapter>
+   <Chapter id={id}>6. Dynamic path for lookup and lookup API </Chapter>
    <div className="flex flex-col gap-8 ml-5 mt-2">
     <div>
      <H>
       Now that we can generate id and store it into redis.We need a way to look it up. Best way to
-      do so is by using Next.js dynamic routes. There are two types <code>{`[id]`}</code> and{' '}
+      do that is by using Next.js dynamic routes. There are two types <code>{`[id]`}</code> and{' '}
       <code>{`[slug]`}</code>, where id is for number and slug is for string. For this case we are
       going to use <code>{`[slug]`}</code>, because we have a hex number.
      </H>
@@ -133,7 +133,7 @@ export default function Page({ params }: { params: { slug: string } }) {
      <H>
       We will use URL parameters and <HL>GET</HL> method on <code>api/url</code> path, so we
       don&apos;t have to create a separate api route. The first step is to create headers for our
-      request, then assemble an url with parametr id and fetch it.Then we need to check if we got
+      request, then assemble an url with parameter id and fetch it.Then we need to check if we got
       any errors. If we did not, we will redirect the user to the url.
      </H>
      <Code
@@ -199,7 +199,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     </div>
     <div>
      <H>
-      Now the only thing left here is to call the function in useEffect hook and add it into
+      Now the only thing left to do is to call the function in useEffect hook and add it into
       dependencies array.
      </H>
      <Code
@@ -267,7 +267,7 @@ export default function Page({ params }: { params: { slug: string } }) {
      <H>
       {' '}
       Moving to API we will be modifying <HL>GET</HL> function in <code>src/api/url/route.ts</code>{' '}
-      by firtly parsing the url to get the id paramater.
+      by firtly parsing the url to get the id parameter.
      </H>
      <Code
       text={`import RedisLib from '@/lib/redis'
@@ -481,7 +481,7 @@ export async function POST(req: Request) {
     </div>
     <div>
      <H>
-      But because we use dynamic route that calls the api. We can run into caching proble. To solve
+      But because we use dynamic route that calls the api. We can run into caching problem. To solve
       that we will turn caching off with this constant.
      </H>
      <Code text={`export const dynamic = 'force-dynamic'`}>

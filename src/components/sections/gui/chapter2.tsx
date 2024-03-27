@@ -1,10 +1,10 @@
 import { Chapter, H, HL } from '@/components/ui/textFormat'
 import { Code } from '@/components/ui/code'
 
-export default function Chapter2() {
+export default function Chapter2({ id }: { id?: string }) {
  return (
   <>
-   <Chapter>2. Installation</Chapter>
+   <Chapter id={id}>2. Installation</Chapter>
    <div className="flex flex-col gap-8 ml-5 mt-2">
     <div>
      <H>Creating project</H>

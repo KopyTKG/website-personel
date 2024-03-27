@@ -4,8 +4,12 @@ function H({ children }: { children: React.ReactNode }) {
  return <h4 className="text-lg">{children}</h4>
 }
 
-function Chapter({ children }: { children: React.ReactNode }) {
- return <h4 className="text-3xl font-bold">{children}</h4>
+function Chapter({ id, children }: { id?: string; children: React.ReactNode }) {
+ return (
+  <h4 className="text-3xl font-bold" id={id}>
+   {children}
+  </h4>
+ )
 }
 
 function HL({ children }: { children: React.ReactNode }) {
