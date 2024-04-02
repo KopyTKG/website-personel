@@ -17,7 +17,7 @@ export default function KI_GUI() {
      target="_blank"
      rel="noreferrer"
      className="flex items-center text-lg font-bold hover:bg-white/50 ease-in-out duration-200 rounded-lg p-[.25rem]">
-     Repo
+     Demo Repo
      <Github width={30} className="w-10 h-10  fill-white " />
     </a>
    </div>

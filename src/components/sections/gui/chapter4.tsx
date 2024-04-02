@@ -6,7 +6,7 @@ import { irBlack } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 export default function Chapter4({ id }: { id?: string }) {
  return (
   <>
-   <Chapter id={id}>4. Index page (Main)</Chapter>
+   <Chapter id={id}>4. Home page</Chapter>
    <div className="flex flex-col gap-8 ml-5 mt-2">
     <div>
      <H>

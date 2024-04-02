@@ -7,15 +7,15 @@ export default function Chapter2({ id }: { id?: string }) {
    <Chapter id={id}>2. Installation</Chapter>
    <div className="flex flex-col gap-8 ml-5 mt-2">
     <div>
-     <H>Creating project</H>
+     <H>To initialize any next project we need to run this command</H>
      <Code text="npx create-next-app@latest">
       npx&nbsp;<HL>create-next-app@latest</HL>
      </Code>
     </div>
     <div>
      <H>
-      For first use of npx commad there could be this prompt. Just type &apos;Y&apos; and press
-      enter
+      After the first npx command, this prompt might appear, if it does please just press
+      &apos;Y&apos;
      </H>
      <Code>
       Need to install the following packages: <br />
@@ -50,8 +50,8 @@ export default function Chapter2({ id }: { id?: string }) {
     <div>
      <H>
       {' '}
-      To use redis we need to add <code>.env</code> file to the root directory of our project with
-      following code
+      It is good practice to save any secret into <code>.env</code> file. We will follow that rule
+      and we will create <code>.env</code> at root of our project with following code
      </H>
      <Code
       text={`
@@ -71,12 +71,13 @@ export default function Chapter2({ id }: { id?: string }) {
     </div>
     <div>
      <H>
-      And for safty reason we need to add this ignore line into <code>.gitignore</code> file
+      Because <code>.env</code> file holds secrets, it is important to add it to{' '}
+      <code>.gitignore</code>.
      </H>
      <Code text=".env">.env</Code>
     </div>
     <div>
-     <H>Now to start your project run this command</H>
+     <H>Now to start development server by running this command in project folder.</H>
      <Code text="npm run dev">npm run dev</Code>
      <H>
       After this node server will start on{' '}

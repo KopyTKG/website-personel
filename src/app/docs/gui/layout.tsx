@@ -31,7 +31,7 @@ export default function GuiLayout({ children }: { children: React.ReactNode }) {
   },
   {
    name: 'Chapter 4',
-   desc: 'Index page (Main)',
+   desc: 'Home page',
    id: 'chapter4',
   },
   {
