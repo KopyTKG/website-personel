@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import React from 'react'
 import { GeistSans } from 'geist/font/sans'
 import { Providers } from './providers'
-import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
  title: 'TheKrew.app',
@@ -19,10 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <meta charSet="UTF-8" />
    </head>
    <body className={GeistSans.className}>
-    <Providers>
-     {children}
-     <Footer />
-    </Providers>
+    <Providers>{children}</Providers>
    </body>
   </html>
  )

@@ -12,8 +12,23 @@ const content = [
      src="/projects/moviedb.png"
      width={1920}
      height={1080}
-     className="object-contain w-full"
-     alt="linear board demo"
+     className="object-contain w-full border-1 border-white border"
+     alt="splash art for moviedb"
+    />
+   </a>
+  ),
+ },
+ {
+  title: 'Docs',
+  description: 'Documentation endpoint for my projects. Including uni project for KI/GUI.',
+  content: (
+   <a href="/docs">
+    <Image
+     src="/projects/docs.png"
+     width={1920}
+     height={1080}
+     className="object-contain w-full border-1 border-white border"
+     alt="splash art for docs"
     />
    </a>
   ),
