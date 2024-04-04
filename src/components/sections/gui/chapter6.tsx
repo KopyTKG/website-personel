@@ -154,8 +154,8 @@ export default function Page({ params }: { params: { slug: string } }) {
     );
 
     if (!response.ok) {
-      window.location.replace(process.env.NEXT_PUBLIC_BASE_URL)
- || ''    }
+      window.location.replace(process.env.NEXT_PUBLIC_BASE_URL || '' )
+    }
 
     const data = await response.json();
     window.location.replace(data.url);
@@ -367,7 +367,8 @@ export async function POST(req: Request) {
       Next we will get instance of our <code>RedisLib</code> and check if we have <code>id</code> in
       cache. Based on that we will return the url or throw 404 error code
      </H>
-     <Code text={`import RedisLib from '@/lib/redis'
+     <Code 
+        text={`import RedisLib from '@/lib/redis'
 
 function getRandomNumber(): number {
     const min = 1;
