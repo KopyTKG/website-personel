@@ -1,7 +1,7 @@
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-  background-color: $SecondaryColor;
+  background-color: #000000;
 }
 
 /* Track */
@@ -13,8 +13,8 @@
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background: $PrimaryColor
+  background: rgba(255, 0, 0, 0.5)
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-background:darken($PrimaryColor, 5%)
+background:rgba(255, 0, 0, 0.3)
 }
