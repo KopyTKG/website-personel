@@ -297,7 +297,7 @@ export default function Portfolio() {
         <span className="sr-only">LinkedIn</span>
        </motion.a>
        <motion.a
-        href="contact@thekrew.app"
+        href="mailto:contact@thekrew.app"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0 }}
