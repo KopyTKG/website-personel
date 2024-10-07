@@ -1,16 +1,17 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "next/core-web-vitals",
-        "plugin:react/recommended",
-        "plugin:react/jsx-runtime",
-        "plugin:react-hooks/recommended",
-        "eslint:recommended",
-        "plugin:prettier/recommended"
-    ],
-    "rules": {
-    }
-  }
+ "env": {
+  "browser": true,
+  "es2021": true
+ },
+ "extends": [
+  "next/core-web-vitals",
+  "plugin:react/recommended",
+  "plugin:react/jsx-runtime",
+  "plugin:react-hooks/recommended",
+  "eslint:recommended",
+  "plugin:prettier/recommended"
+ ],
+ "rules": {
+  "prettier/prettier": "off"
+ }
+}
