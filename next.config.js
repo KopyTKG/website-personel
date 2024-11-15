@@ -1,7 +1,7 @@
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
-    style-src 'self' 'unsafe-inline';
+    script-src 'self';
+    style-src 'self';
     img-src 'self' blob: data:;
     font-src 'self';
     object-src 'none';
@@ -19,6 +19,19 @@ const nextConfig = {
    {
     source: '/',
     headers: [
+	    {
+      key: 'Access-Control-Allow-Origin',
+      value: '*', // Set your origin
+     },
+     {
+      key: 'Access-Control-Allow-Methods',
+      value: 'GET',
+     },
+     {
+      key: 'Access-Control-Allow-Headers',
+      value: 'Content-Type, Authorization',
+     },
+
      {
       key: 'Content-Security-Policy',
       value: cspHeader.replace(/\n/g, ''),
@@ -33,7 +46,7 @@ const nextConfig = {
      },
      {
       key: 'Referrer-Policy',
-      value: 'origin-when-cross-origin',
+      value: 'no-referrer',
      },
      {
       key: 'Permissions-Policy',
