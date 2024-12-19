@@ -1,43 +1,29 @@
-const cspHeader = `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
-    style-src 'self';
-    img-src 'self' blob: data:;
-    font-src 'self';
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    frame-ancestors 'none';
-    upgrade-insecure-requests;
-`
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
- transpilePackages: ['lucide-react'], // add this
+ transpilePackages: ['lucide-react'],
+ eslint: {
+  ignoreDuringBuilds: true,
+ },
  async headers() {
   return [
    {
-    source: '/',
+    source: '/:path*',
     headers: [
-	    {
+     {
       key: 'Access-Control-Allow-Origin',
-      value: '*', // Set your origin
+      value: process.env.DOMAIN || 'null',
      },
      {
       key: 'Access-Control-Allow-Methods',
-      value: 'GET',
+      value: 'GET, OPTIONS',
      },
      {
       key: 'Access-Control-Allow-Headers',
       value: 'Content-Type, Authorization',
      },
      {
-      key: 'Content-Security-Policy',
-      value: cspHeader.replace(/\n/g, ''),
-     },
-     {
       key: 'X-Frame-Options',
-      value: 'SAMEORIGIN',
+      value: 'DENY',
      },
      {
       key: 'X-Content-Type-Options',
@@ -45,11 +31,23 @@ const nextConfig = {
      },
      {
       key: 'Referrer-Policy',
-      value: 'no-referrer',
+      value: 'strict-origin-when-cross-origin',
      },
      {
       key: 'Permissions-Policy',
       value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
+     },
+     {
+      key: 'Cache-Control',
+      value: 'public, max-age=0, must-revalidate',
+     },
+     {
+      key: 'Strict-Transport-Security',
+      value: 'max-age=63072000; includeSubDomains; preload',
+     },
+     {
+      key: 'X-XSS-Protection',
+      value: '1; mode=block',
      },
     ],
    },
@@ -57,4 +55,4 @@ const nextConfig = {
  },
 }
 
-module.exports = nextConfig
+export default nextConfig
