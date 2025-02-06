@@ -3,6 +3,7 @@ import '../assets/sass/index.scss'
 import type { Metadata } from 'next'
 import React from 'react'
 import { GeistSans } from 'geist/font/sans'
+import { headers } from 'next/headers'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
@@ -11,7 +12,13 @@ export const metadata: Metadata = {
  creator: 'KopyTKG',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+ const nonce = (await headers()).get('x-nonce')
+
+ if (!nonce) {
+  return <b>Loading ....</b>
+ }
+
  return (
   <html lang="en">
    <head>
