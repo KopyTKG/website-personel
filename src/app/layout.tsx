@@ -5,7 +5,6 @@ import React from 'react'
 import { GeistSans } from 'geist/font/sans'
 import { headers } from 'next/headers'
 import { Providers } from './providers'
-import Script from 'next/script'
 
 export const metadata: Metadata = {
  title: 'TheKrew.app',
@@ -27,14 +26,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
    </head>
    <body className={GeistSans.className}>
     <Providers>{children}</Providers>
-    <Script
-     nonce={nonce}
-     id="my-script"
-     dangerouslySetInnerHTML={{
-      __html: `console.log('This inline script is allowed because it has the correct nonce')`,
-     }}
-    />
-    
    </body>
   </html>
  )
