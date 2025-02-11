@@ -1,45 +1,51 @@
 'use client'
 
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Github, Linkedin, Mail, Menu, X } from 'lucide-react'
+import { Github, Linkedin, Mail, Menu, X, Globe } from 'lucide-react'
 import Image from 'next/image'
+import InteractiveHashGrid from '@/components/ui/grid'
 
-const projects = [
- {
-  id: 1,
-  title: 'Personal movie database',
-  description: 'A full-stack movie database website with Next.JS, Prisma and PostgresSQL',
-  link: 'https://github.com/KopyTKG/MovieDB',
- },
- {
-  id: 2,
-  title: 'HACKITHON 2024 project',
-  description:
-   'A group project used for HACKITHON even in 2024 build with Next.JS, FastAPI, PostgresSQL',
-  link: 'https://github.com/KopyTKG/HACKITHON-2024',
- },
- {
-  id: 3,
-  title: 'Lightweight Encryption Algorithm',
-  description:
-   'Lightweight Encryption Algorithm (LEA) implementation in Golang with many modes such as CFB, OFB and more',
-  link: 'https://github.com/KopyTKG/LEA',
- },
- {
-  id: 4,
-  title: 'Class management system',
-  description:
-   'Laborky is a university class management system designed for managing laboratory classes, built using Next.js, FastAPI, and PostgreSQL.',
-  link: 'https://github.com/KopyTKG/laborky',
- },
-]
+interface project {
+ id: number
+ title: string
+ description: string
+ link: string
+ page?: string
+}
 
 const skills = ['React', 'Next.js', 'TypeScript', 'Golang', 'Prisma', 'Tailwind CSS']
 
 export default function Portfolio() {
  const [isMenuOpen, setIsMenuOpen] = useState(false)
  const [isHovered, setIsHovered] = useState(false)
+ const [projects, setProject] = useState<project[]>([])
+
+ useLayoutEffect(() => {
+  const getData = async () => {
+   const url = process.env.NEXT_PUBLIC_DOMAIN || ''
+   console.log(url)
+   if (!url) {
+    throw new Error('Failed: missing env NEXT_PUBLIC_DOMAIN variable')
+   }
+
+   const res = await fetch(`${url}/gist`, {
+    method: 'GET',
+    headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+    next: { revalidate: 3600 },
+   })
+
+   if (!res.ok) {
+    console.error(res)
+    throw new Error('Failed: Connection to gist cannot be established')
+   }
+
+   const text: project[] = await res.json()
+
+   setProject(text.sort((a, b) => a.id - b.id))
+  }
+  getData()
+ }, [])
 
  return (
   <div className="min-h-screen bg-black text-white">
@@ -108,14 +114,7 @@ export default function Portfolio() {
      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
      <div className="absolute inset-0 z-0">
-      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-       <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-         <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 0, 0, 0.3)" strokeWidth="1" />
-        </pattern>
-       </defs>
-       <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
+      <InteractiveHashGrid size={50} elasticity={0.4} range={80} color={'rgba(255, 0, 0, 0.5)'} />
      </div>
      <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -242,18 +241,33 @@ export default function Portfolio() {
          <h3 className="text-xl font-semibold mb-2 text-red-500">{project.title}</h3>
          <p className="text-gray-300">{project.description}</p>
          <div className="mt-auto self-end">
-          <motion.a
-           href={project.link}
-           whileHover={{ scale: 1.1 }}
-           whileTap={{ scale: 0.95 }}
-           className="text-red-500 hover:text-red-400 transition-colors inline-block"
-           target="_blank"
-           rel="noopener noreferrer"
-          >
-           <Github size={24} />
-           <span className="sr-only">GitHub repository for {project.title}</span>
-          </motion.a>
-         </div>{' '}
+          <div className="flex flex-row gap-1">
+           {project.page ? (
+            <motion.a
+             href={project.page}
+             whileHover={{ scale: 1.1 }}
+             whileTap={{ scale: 0.95 }}
+             className="text-red-500 hover:text-red-400 transition-colors inline-block"
+             target="_blank"
+             rel="noopener noreferrer"
+            >
+             <Globe size={24} />
+             <span className="sr-only">GitHub repository for {project.title}</span>
+            </motion.a>
+           ) : null}
+           <motion.a
+            href={project.link}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="text-red-500 hover:text-red-400 transition-colors inline-block"
+            target="_blank"
+            rel="noopener noreferrer"
+           >
+            <Github size={24} />
+            <span className="sr-only">GitHub repository for {project.title}</span>
+           </motion.a>
+          </div>
+         </div>
         </motion.div>
        ))}
       </div>
@@ -316,6 +330,7 @@ export default function Portfolio() {
    <footer className="bg-black py-6 bg-red-900/20">
     <div className="container mx-auto px-6 text-center">
      <p>&copy; {new Date().getFullYear()} thekrew.app All rights reserved.</p>
+     <span className="text-stone-400/20">build: 0.2.4</span>
     </div>
    </footer>
   </div>
